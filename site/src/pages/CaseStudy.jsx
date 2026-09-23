@@ -163,7 +163,14 @@ function LogoCards({ items, imagesFor }) {
         return (
           <li key={it.title} className="rounded-card bg-paper p-5">
             <div className="flex items-center gap-4">
-              {logo && <Media item={logo} alt={altText(logo, it.title)} className="size-12 shrink-0 object-contain" />}
+              {logo ? (
+                <Media item={logo} alt={altText(logo, it.title)} className="size-12 shrink-0 object-contain" />
+              ) : (
+                // No logo on the source site: a monogram disc keeps the row even.
+                <span aria-hidden className="grid size-12 shrink-0 place-items-center rounded-full bg-ink text-display-5 text-paper">
+                  {it.title.trim()[0]}
+                </span>
+              )}
               <h3 className="text-display-5">{it.title}</h3>
             </div>
             <Prose blocks={it.blocks} className="mt-4 text-small" />

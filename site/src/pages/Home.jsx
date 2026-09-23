@@ -120,7 +120,8 @@ export default function Home() {
                 <div key={s.key} className="grid gap-3 border-b border-ink py-5 sm:grid-cols-[200px_1fr]">
                   <dt className="flex items-center gap-3 text-display-5">
                     <span className="grid size-10 shrink-0 place-items-center rounded-full bg-ink">
-                      <img src={skillIcons[s.key]} alt="" width="20" height="20" className="size-5 invert" />
+                      {/* icons ship in pale green: flatten to black, then invert to white on the ink disc */}
+                      <img src={skillIcons[s.key]} alt="" width="20" height="20" className="size-5 [filter:brightness(0)_invert(1)]" />
                     </span>
                     {s.title}
                   </dt>
