@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "../../design-system/tokens.css";
+
+@config "../../design-system/tailwind.config.js";
+
+@layer base {
+  html {
+    background-color: var(--page-bg);
+    transition: background-color var(--dur-bg) var(--ease-move);
+    scroll-padding-top: 20px;
+  }
+
+  body {
+    min-height: 100vh;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  /* Display sizes always speak in the display serif, on any element. */
+  h1, h2, h3, h4, h5, h6, [class*="text-display-"] {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-wrap: balance;
+  }
+  h1, h2, h3, h4, h5, h6 { line-height: var(--leading-heading); }
+
+  p, li, dd { text-wrap: pretty; }
+
+  ::selection {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 5px;
+  }
+}
+
+@layer components {
+  .container-wild {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-x);
+  }
+
+  /* Tracked uppercase mono: the UI-chrome voice */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-mono);
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+  }
+
+  /* ── Pill button with marquee label on hover ── */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55px;
+    padding: 0 40px;
+    border-radius: var(--radius-pill);
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-mono);
+    font-size: var(--text-mono);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .pill--field { color: var(--ink); }
+  .pill__inner { display: inline-grid; overflow: hidden; }
+  .pill__text { grid-area: 1 / 1; }
+  .pill__clone { transform: translateX(calc(-110% - 2.1em)); }
+  .pill:hover .pill__text { animation: marquee var(--dur-marquee) linear infinite; }
+  .pill:hover .pill__clone { animation-name: marquee-clone; }
+
+  /* ── Underline that sweeps in from the left, out to the right ── */
+  .link-sweep {
+    position: relative;
+    display: inline-block;
+  }
+  .link-sweep::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform var(--dur-slow) var(--ease-sweep);
+  }
+  .link-sweep:hover::after,
+  .link-sweep:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+  .link-sweep--on::after { transform: scaleX(1); }
+  .link-sweep--on:hover::after { transform: scaleX(0); transform-origin: right center; }
+
+  /* ── Long-form copy ── */
+  .prose-wild > * + * { margin-top: 20px; }
+  .prose-wild p { max-width: 65ch; }
+  .prose-wild ul { display: grid; gap: 10px; max-width: 65ch; }
+  .prose-wild ul li { position: relative; padding-left: 25px; }
+  .prose-wild ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+
+  /* ── Horizontal carousel ── */
+  .carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--carousel-inset);
+    padding-inline: var(--carousel-inset);
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--ink) transparent;
+    overscroll-behavior-x: contain;
+  }
+  .carousel > * { scroll-snap-align: start; flex: none; }
+
+  /* ── Lightbox ── */
+  .lightbox {
+    max-width: min(1400px, 95vw);
+    max-height: 95vh;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+  }
+  .lightbox::backdrop { background: var(--scrim); }
+  .lightbox[open] { animation: lightbox-in var(--dur-base) var(--ease-out); }
+}
+
+@keyframes marquee-clone {
+  from { transform: translateX(calc(-110% - 2.1em)); }
+  to { transform: translateX(0); }
+}
+@keyframes lightbox-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+:root {
+  --carousel-inset: max(var(--container-x), calc((100vw - var(--container-max)) / 2 + var(--container-x)));
+}

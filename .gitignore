@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.local
+.DS_Store
+
+# SkillUI extraction of wildsouls.gr (40MB of reference screenshots).
+# The design system distilled from it lives in design-system/.
+wildsouls-design/
