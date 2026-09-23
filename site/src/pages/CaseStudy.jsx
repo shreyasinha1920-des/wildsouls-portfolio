@@ -161,16 +161,19 @@ function LogoCards({ items, imagesFor }) {
       {items.map((it) => {
         const logo = imagesFor(it.title).find((i) => i.role === 'logo')
         return (
-          <li key={it.title} className="rounded-card bg-paper p-5">
+          <li key={it.title} className="border-t border-ink pt-5">
             <div className="flex items-center gap-4">
-              {logo ? (
-                <Media item={logo} alt={altText(logo, it.title)} className="size-12 shrink-0 object-contain" />
-              ) : (
-                // No logo on the source site: a monogram disc keeps the row even.
-                <span aria-hidden className="grid size-12 shrink-0 place-items-center rounded-full bg-ink text-display-5 text-paper">
-                  {it.title.trim()[0]}
-                </span>
-              )}
+              {/* The paper disc sits behind the logo only: most of these marks are
+                  brand-colored, so they need a light backing to stay legible.
+                  No logo (FontJoy has none on the source site) → a lettermark,
+                  so the row still lines up with its neighbours. */}
+              <span className="grid size-14 shrink-0 place-items-center rounded-full bg-paper">
+                {logo ? (
+                  <Media item={logo} alt={altText(logo, it.title)} className="size-9 object-contain" />
+                ) : (
+                  <span aria-hidden className="font-mono text-display-5">{it.title.charAt(0)}</span>
+                )}
+              </span>
               <h3 className="text-display-5">{it.title}</h3>
             </div>
             <Prose blocks={it.blocks} className="mt-4 text-small" />
