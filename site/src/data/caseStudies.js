@@ -1786,7 +1786,7 @@ export const caseStudies = {
     "slug": "vitalsthailand",
     "eyebrow": "Project",
     "title": "Vitals Thailand",
-    "hook": "Turning a site that looked like a scam into one that felt like a brand.",
+    "hook": "Turning a site that looked untrustworthy into one that felt like a brand.",
     "tags": [
       "E-commerce",
       "Healthcare",
@@ -1836,7 +1836,7 @@ export const caseStudies = {
             "title": "No trust",
             "blocks": [
               {
-                "text": "No trust badges, no reviews, no clear return policy, no visible contact information. For a health supplement brand — where users are putting things in their bodies — trust is everything. The site looked like a scam."
+                "text": "No trust badges, no reviews, no clear return policy, no visible contact information. For a health supplement brand — where users are putting things in their bodies — trust is everything. The site looked untrustworthy."
               }
             ]
           },

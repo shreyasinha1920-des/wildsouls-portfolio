@@ -134,7 +134,7 @@ function Header({ project, cs, hero, accent }) {
           {cs.stats.map((s) => (
             <div key={s.value + s.label} className="flex flex-col-reverse border-b border-ink py-6 sm:border-b-0 sm:pr-6 sm:[&:not(:first-child)]:border-l sm:[&:not(:first-child)]:pl-6">
               <dt className="font-mono text-mono-sm uppercase">{s.label}</dt>
-              <dd className="text-display-2 font-black">{s.value}</dd>
+              <dd data-count className="text-display-2 font-black tabular-nums">{s.value}</dd>
             </div>
           ))}
         </dl>
@@ -180,7 +180,7 @@ function Section({ section, imagesFor, accent }) {
 function SectionTitle({ index, title, className = '', sticky = false }) {
   return (
     <div className={className}>
-      <h2 className={`text-display-3 ${sticky ? 'lg:sticky lg:top-10' : ''}`}>
+      <h2 data-reveal className={`text-display-3 ${sticky ? 'lg:sticky lg:top-10' : ''}`}>
         {index && <span className="mb-2 block font-mono text-mono-sm">{index}</span>}
         {title}
       </h2>
@@ -192,7 +192,15 @@ function SectionImages({ images, title }) {
   // One image keeps its own proportions; several share a grid on a paper mat.
   if (images.length === 1) {
     const [img] = images
-    return <ZoomImage item={img} alt={altText(img, title)} className="mt-10 w-fit" imgClassName="max-h-[420px] w-auto max-w-full" />
+    return (
+      <ZoomImage
+        item={img}
+        alt={altText(img, title)}
+        className="mt-10 w-fit"
+        imgClassName="max-h-[420px] w-auto max-w-full"
+        data-parallax="0.12"
+      />
+    )
   }
   const cols = images.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'
   return (
@@ -206,7 +214,7 @@ function SectionImages({ images, title }) {
 
 function LogoCards({ items, imagesFor }) {
   return (
-    <ul className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    <ul data-reveal-group="0.07" className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
       {items.map((it) => {
         const logo = imagesFor(it.title).find((i) => i.role === 'logo')
         return (
@@ -236,7 +244,7 @@ function LogoCards({ items, imagesFor }) {
 
 function TextCards({ items }) {
   return (
-    <ul className={`mt-10 grid gap-x-6 border-t border-ink ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+    <ul data-reveal-group="0.07" className={`mt-10 grid gap-x-6 border-t border-ink ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
       {items.map((it) => {
         const { index, title } = splitIndex(it.title)
         return (
@@ -268,7 +276,12 @@ function FeatureRows({ section, title, imagesFor, accent }) {
           const imgs = imagesFor(it.title).filter((m) => m.role === 'image')
           const flip = i % 2 === 1
           return (
-            <li key={it.title} className="grid items-center gap-10 lg:grid-cols-12 lg:gap-6">
+            <li
+              key={it.title}
+              data-reveal="side"
+              data-from={flip ? 'right' : 'left'}
+              className="grid items-center gap-10 lg:grid-cols-12 lg:gap-6"
+            >
               <div className={`lg:col-span-5 ${flip ? 'lg:order-2 lg:col-start-8' : ''}`}>
                 <span className="mb-3 block font-mono text-mono-sm">{index || String(i + 1).padStart(2, '0')}</span>
                 <h3 className="text-display-4">{itemTitle}</h3>
@@ -352,11 +365,11 @@ function Outcome({ section, field }) {
         <div className="lg:col-span-8">
           {section.blocks.map((b, i) =>
             b.list ? (
-              <ul key={i} className="border-t border-ink">
+              <ul key={i} data-reveal-group="0.12" className="border-t border-ink">
                 {b.list.map((li) => <li key={li} className="border-b border-ink py-5 text-display-5">{li}</li>)}
               </ul>
             ) : (
-              <p key={i} className="mb-5 max-w-[40ch] text-display-5 last:mb-0">{b.text}</p>
+              <p key={i} data-reveal className="mb-5 max-w-[40ch] text-display-5 last:mb-0">{b.text}</p>
             ),
           )}
           <Links links={section.links} />
@@ -385,7 +398,7 @@ function NextProject({ next }) {
           </div>
         </div>
         <Link to={`/${next.slug}`} viewTransition aria-hidden tabIndex={-1} className="md:col-span-5">
-          <Media item={card} alt="" className="aspect-[5/2] w-full rounded-card object-cover object-top transition-transform duration-base ease-spring group-hover:-translate-y-2 group-active:-translate-y-0.5" />
+          <Media data-parallax="0.15" item={card} alt="" className="aspect-[5/2] w-full rounded-card object-cover object-top transition-transform duration-base ease-spring group-hover:-translate-y-2 group-active:-translate-y-0.5" />
         </Link>
       </div>
     </Field>

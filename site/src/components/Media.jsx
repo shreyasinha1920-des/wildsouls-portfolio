@@ -1,5 +1,5 @@
 // Plain image with intrinsic size set (prevents layout shift) and lazy loading by default.
-export default function Media({ item, alt, className = '', eager = false, style }) {
+export default function Media({ item, alt, className = '', eager = false, style, ...rest }) {
   if (!item) return null
   return (
     <img
@@ -11,6 +11,7 @@ export default function Media({ item, alt, className = '', eager = false, style 
       decoding="async"
       className={className}
       style={style}
+      {...rest}
     />
   )
 }

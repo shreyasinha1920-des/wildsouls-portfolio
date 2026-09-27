@@ -56,7 +56,12 @@ export default function AiProjects() {
           {prototypes.map((p, i) => {
             const flip = i % 2 === 1
             return (
-              <li key={p.title} className="grid items-center gap-10 lg:grid-cols-12 lg:gap-6">
+              <li
+                key={p.title}
+                data-reveal="side"
+                data-from={flip ? 'right' : 'left'}
+                className="grid items-center gap-10 lg:grid-cols-12 lg:gap-6"
+              >
                 <div className={`relative lg:col-span-7 ${flip ? 'lg:order-2 lg:col-start-6' : ''}`}>
                   <div aria-hidden className={`absolute -inset-y-5 w-2/3 rounded-card ${flip ? '-right-5' : '-left-5'}`} style={{ background: `var(--field-${p.color})` }} />
                   <ZoomImage item={imageFor(p.title)} alt={imageFor(p.title)?.alt} className="relative" imgClassName="w-full" />

@@ -103,8 +103,8 @@ export default function Home() {
       {/* ── Clients ── */}
       <Field field="tangerine" className="py-20" aria-labelledby="clients-title">
         <div className="container-wild mb-12 grid gap-5 md:grid-cols-12 md:items-end">
-          <h2 id="clients-title" className="text-display-3 md:col-span-6">{clientsIntro.title}</h2>
-          <p className="max-w-[45ch] md:col-span-5 md:col-start-8">{clientsIntro.body}</p>
+          <h2 data-reveal id="clients-title" className="text-display-3 md:col-span-6">{clientsIntro.title}</h2>
+          <p data-reveal className="max-w-[45ch] md:col-span-5 md:col-start-8">{clientsIntro.body}</p>
         </div>
         <ClientLogos />
       </Field>
@@ -113,18 +113,18 @@ export default function Home() {
       <Field field="cream" id="work" className="py-section" aria-labelledby="work-title">
         <div className="container-wild">
           <div className="grid gap-5 md:grid-cols-12 md:items-end">
-            <h2 id="work-title" className="text-display-2 font-black md:col-span-7">{workIntro.title}</h2>
-            <p className="max-w-[45ch] md:col-span-4 md:col-start-9">{workIntro.body}</p>
+            <h2 data-reveal id="work-title" className="text-display-2 font-black md:col-span-7">{workIntro.title}</h2>
+            <p data-reveal className="max-w-[45ch] md:col-span-4 md:col-start-9">{workIntro.body}</p>
           </div>
 
-          <div className="mt-16 grid gap-x-6 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
+          <div data-reveal-group="0.12" className="mt-16 grid gap-x-6 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
             {featured.map((p, i) => (
               <ArchCard key={p.slug} to={`/${p.slug}`} {...p} image={projectMedia[p.slug].card} eager={i === 0} />
             ))}
             <ArchCard to="/ai-projects" {...aiCard} image={projectMedia['ai-projects'].card} color="lavender" />
           </div>
 
-          <h3 className="eyebrow mt-24 mb-5">More work</h3>
+          <h3 data-reveal className="eyebrow mt-24 mb-5">More work</h3>
           <WorkIndex items={more} />
         </div>
       </Field>
@@ -133,10 +133,10 @@ export default function Home() {
       <Field field="lavender" className="py-section" aria-labelledby="testimonials-title">
         <div className="container-wild">
           <div className="grid gap-5 md:grid-cols-12 md:items-end">
-            <h2 id="testimonials-title" className="text-display-2 font-black md:col-span-6">{testimonials.title}</h2>
-            <p className="max-w-[45ch] md:col-span-5 md:col-start-8">{testimonials.body}</p>
+            <h2 data-reveal id="testimonials-title" className="text-display-2 font-black md:col-span-6">{testimonials.title}</h2>
+            <p data-reveal className="max-w-[45ch] md:col-span-5 md:col-start-8">{testimonials.body}</p>
           </div>
-          <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-6">
+          <div data-reveal-group="0.15" className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-6">
             {testimonials.quotes.map((q) => (
               <figure key={q.id} className="flex flex-col border-t border-ink pt-8">
                 <blockquote className="flex-1">
@@ -162,18 +162,21 @@ export default function Home() {
       <Field field="blush" id="about" className="py-section" aria-labelledby="about-title">
         <div className="container-wild grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
+            {/* The hero crops this same portrait tall inside an arch; here it runs
+                square and uncropped in the big-corner panel, so the two frames read
+                as different treatments rather than a repeated picture. */}
             <div className="overflow-hidden rounded-corner-sm bg-field-terracotta lg:sticky lg:top-10 md:rounded-corner">
-              <Media item={{ src: brand.portraitWide, width: 1254, height: 705 }} alt="Shreya Sinha" className="aspect-[4/5] w-full object-cover object-[60%_center]" />
+              <Media data-parallax="0.18" item={{ src: brand.portrait, width: 1254, height: 1254 }} alt="Shreya Sinha" className="aspect-square w-full scale-110 object-cover" />
             </div>
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
-            <h2 id="about-title" className="text-display-2 font-black">{about.title}</h2>
-            <div className="mt-8 space-y-5">
+            <h2 data-reveal id="about-title" className="text-display-2 font-black">{about.title}</h2>
+            <div data-reveal-group="0.1" className="mt-8 space-y-5">
               {about.paragraphs.map((p) => <p key={p} className="max-w-[60ch]">{p}</p>)}
             </div>
 
-            <h3 className="eyebrow mt-16 mb-5">Skills</h3>
-            <dl className="border-t border-ink">
+            <h3 data-reveal className="eyebrow mt-16 mb-5">Skills</h3>
+            <dl data-reveal-group="0.06" className="border-t border-ink">
               {skills.map((s) => (
                 <div key={s.key} className="grid gap-3 border-b border-ink py-5 sm:grid-cols-[200px_1fr]">
                   <dt className="flex items-center gap-3 text-display-5">
@@ -188,8 +191,8 @@ export default function Home() {
               ))}
             </dl>
 
-            <h3 className="eyebrow mt-16 mb-5">Education & certificates</h3>
-            <ul className="space-y-3">
+            <h3 data-reveal className="eyebrow mt-16 mb-5">Education & certificates</h3>
+            <ul data-reveal-group="0.06" className="space-y-3">
               {credentials.map((c) => (
                 <li key={c.title}>
                   <span className="text-display-5">{c.title}</span>
@@ -200,7 +203,7 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="container-wild mt-section text-center text-display-1 font-black">
+        <p data-words className="container-wild mt-section text-center text-display-1 font-black [text-wrap:initial]">
           {about.manifesto.map((line) => <span key={line} className="block">{line}</span>)}
         </p>
       </Field>
@@ -208,14 +211,14 @@ export default function Home() {
       {/* ── Process ── */}
       <Field field="terracotta" id="process" className="py-section" aria-labelledby="process-title">
         <div className="container-wild">
-          <p className="eyebrow mb-3">{process.eyebrow}</p>
-          <h2 id="process-title" className="max-w-[18ch] text-display-2 font-black">{process.title}</h2>
-          <p className="mt-6 max-w-[60ch]">{process.body}</p>
+          <p data-reveal className="eyebrow mb-3">{process.eyebrow}</p>
+          <h2 data-reveal id="process-title" className="max-w-[18ch] text-display-2 font-black">{process.title}</h2>
+          <p data-reveal className="mt-6 max-w-[60ch]">{process.body}</p>
 
           <div className="mt-16 grid gap-16 lg:grid-cols-12 lg:gap-6">
             <section className="lg:col-span-4" aria-labelledby="ideal-title">
               <h3 id="ideal-title" className="mb-6 text-display-4">The ideal process</h3>
-              <ol className="rounded-card bg-field-butter p-6">
+              <ol data-reveal-group="0.07" className="rounded-card bg-field-butter p-6">
                 {process.ideal.map((s, i) => (
                   <li key={s.term} className="grid grid-cols-[30px_1fr] gap-3 border-b border-ink py-4 first:pt-0 last:border-0 last:pb-0">
                     <span className="font-mono text-mono-sm pt-1">{i + 1}</span>
@@ -230,7 +233,7 @@ export default function Home() {
 
             <section className="lg:col-span-7 lg:col-start-6" aria-labelledby="actual-title">
               <h3 id="actual-title" className="mb-6 text-display-4">How I actually work</h3>
-              <ol className="border-t border-ink">
+              <ol data-reveal-group="0.09" className="border-t border-ink">
                 {process.actual.map((s, i) => (
                   <li key={s.title} className="grid grid-cols-[45px_1fr] gap-3 border-b border-ink py-6">
                     <span className="font-mono text-mono-sm pt-2">{String(i + 1).padStart(2, '0')}</span>
