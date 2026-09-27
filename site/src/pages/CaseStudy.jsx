@@ -13,7 +13,10 @@ import { altText } from '../lib/alt'
 import NotFound from './NotFound'
 
 const GALLERY = /^(screen highlights|key screens)$/i
-const accentFor = (color) => (color === 'butter' ? 'lavender' : 'butter')
+// Pale fields get a saturated accent shape, saturated fields get a pale one,
+// so the arch behind the hero always reads against its page.
+const PALE = new Set(['cream', 'butter', 'sky', 'blush', 'orchid', 'lavender', 'pink'])
+const accentFor = (color) => (PALE.has(color) ? 'terracotta' : 'butter')
 const bodyLength = (it) => (it.blocks || []).reduce((n, b) => n + (b.text || b.list?.join(' ') || '').length, 0)
 
 // "01 — Trust Architecture" → { index: '01', title: 'Trust Architecture' }
@@ -66,6 +69,9 @@ function Header({ project, cs, hero, accent }) {
       <div className="container-wild">
         <div className="grid items-center gap-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
+            <Link to="/#work" viewTransition className="link-sweep eyebrow mb-6 inline-block">
+              ← All work
+            </Link>
             <p className="eyebrow mb-3">{cs.eyebrow === 'Project' ? 'Case study' : cs.eyebrow}</p>
             <h1 id="cs-title" className="text-display-1 font-black">{cs.title}</h1>
             <p className="mt-6 max-w-[30ch] text-display-5">{cs.hook}</p>
@@ -322,7 +328,7 @@ function NextProject({ next }) {
   const card = projectMedia[next.slug].card
   return (
     <Field field={next.color} className="py-section">
-      <Link to={`/${next.slug}`} className="group container-wild grid items-center gap-10 md:grid-cols-12">
+      <Link to={`/${next.slug}`} viewTransition className="group container-wild grid items-center gap-10 md:grid-cols-12">
         <div className="md:col-span-7">
           <p className="eyebrow mb-3">Next case study</p>
           <p className="text-display-1 font-black"><span className="link-sweep">{next.title}</span></p>

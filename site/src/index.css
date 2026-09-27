@@ -8,10 +8,13 @@
     background-color: var(--page-bg);
     transition: background-color var(--dur-bg) var(--ease-move);
     scroll-padding-top: 20px;
+    scrollbar-gutter: stable;
   }
 
   body {
     min-height: 100vh;
+    /* No 300ms tap delay, and taps never select the label underneath */
+    touch-action: manipulation;
     color: var(--ink);
     font-family: var(--font-body);
     font-size: var(--text-body);
@@ -38,6 +41,26 @@
   :focus-visible {
     outline: 2px solid var(--ink);
     outline-offset: 5px;
+    border-radius: 2px;
+  }
+  /* On ink surfaces the ring has to invert to stay visible */
+  .bg-ink :focus-visible,
+  .pill:focus-visible {
+    outline-color: var(--paper);
+  }
+
+  /* Every control answers the press, instantly, before anything navigates. */
+  a, button, [role="tab"], summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+  a:active, button:active, [role="tab"]:active {
+    transform: scale(0.985);
+  }
+  .pill:active, .press-pop:active {
+    transform: scale(0.96);
+  }
+  a, button, [role="tab"], .press-pop {
+    transition: transform var(--dur-press) var(--ease-quick);
   }
 }
 
@@ -138,15 +161,64 @@
 
   /* ── Lightbox ── */
   .lightbox {
+    /* The reset zeroes margins on every element, which also removes the UA
+       `margin: auto` that centres a native dialog. */
+    margin: auto;
     max-width: min(1400px, 95vw);
     max-height: 95vh;
     padding: 0;
     border: 0;
     background: transparent;
     overflow: visible;
+    overscroll-behavior: contain;
+
+    /* Closed state. Both directions run the same path, so it leaves the way it arrived. */
+    opacity: 0;
+    transform: scale(0.92) translate(var(--lightbox-dx, 0), var(--lightbox-dy, 0));
+    transform-origin: var(--lightbox-origin-x, 50%) var(--lightbox-origin-y, 50%);
+    transition:
+      opacity var(--dur-base) var(--ease-quick),
+      transform var(--dur-base) var(--ease-spring),
+      overlay var(--dur-base) allow-discrete,
+      display var(--dur-base) allow-discrete;
   }
-  .lightbox::backdrop { background: var(--scrim); }
-  .lightbox[open] { animation: lightbox-in var(--dur-base) var(--ease-out); }
+  .lightbox[open] {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+  @starting-style {
+    .lightbox[open] {
+      opacity: 0;
+      transform: scale(0.92) translate(var(--lightbox-dx, 0), var(--lightbox-dy, 0));
+    }
+  }
+  .lightbox::backdrop {
+    background: var(--scrim);
+    opacity: 0;
+    transition:
+      opacity var(--dur-base) var(--ease-quick),
+      overlay var(--dur-base) allow-discrete,
+      display var(--dur-base) allow-discrete;
+  }
+  .lightbox[open]::backdrop { opacity: 1; }
+  @starting-style {
+    .lightbox[open]::backdrop { opacity: 0; }
+  }
+  /* The page lock itself lives in Lightbox.jsx: `overflow-x: clip` on body wins
+     over a rule here, so it is applied to the root element instead. */
+}
+
+/* React Router opts each navigation in; these rules shape the cross-fade. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--dur-base);
+  animation-timing-function: var(--ease-quick);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation-duration: var(--dur-fast); }
 }
 
 @keyframes marquee-clone {

@@ -1,5 +1,5 @@
 // Case-study index. Order = the "next project" chain (last loops to first).
-// `color` is the project's field color token (see design-system/tokens.css).
+// `color` is the project’s field color token (see design-system/tokens.css).
 // Case-study copy lives in caseStudies.js; images in media.js.
 export const projects = [
   {
@@ -53,7 +53,7 @@ export const projects = [
     title: 'Eightfold Career Pages',
     color: 'sky',
     tags: ['Enterprise', 'Brand-Matched Design', 'Live Work'],
-    summary: "Career pages for Fortive, Dexcom, 10x Genomics, Ralliant and Booking Holdings — each brand's identity translated into a tailored hiring experience within platform constraints.",
+    summary: "Career pages for Fortive, Dexcom, 10x Genomics, Ralliant and Booking Holdings — each brand’s identity translated into a tailored hiring experience within platform constraints.",
     outcome: "5 live career pages, used for hiring today.",
   },
   {
@@ -67,7 +67,7 @@ export const projects = [
   {
     slug: 'redcrackle',
     title: 'RedCrackle',
-    color: 'brick',
+    color: 'cream',
     tags: ['Agency Website', 'Brand Identity', 'Digital Transformation'],
     summary: "Full brand identity and website for a digital transformation agency — from logo and visual system through to a conversion-focused web presence.",
     outcome: "Live at redcrackle.com, pitching Fortune 500 clients daily.",
@@ -77,7 +77,7 @@ export const projects = [
     title: 'Ebb',
     color: 'mint',
     tags: ['Fintech', 'Mobile App', 'AI-Augmented Design'],
-    summary: "A smart money flow app for freelancers, designed in 10 days using 8 AI tools. A live experiment in AI-augmented product design.",
+    summary: "A smart money flow app for freelancers, designed in 10 days using 8 AI tools. A live experiment in AI-augmented product design.",
   },
 ]
 

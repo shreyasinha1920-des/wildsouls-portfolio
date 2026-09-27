@@ -50,7 +50,7 @@ Sampled from undimmed full-page screenshots. Each section gets exactly one of th
 | `--field-terracotta` | `#be5a4b` | Product rows, shop, legal pages, footer | The house color. Most used. |
 | `--field-tangerine` | `#ed7b49` | Press quotes, gift builder | Second most used |
 | `--field-apricot` | `#eb874a` | "Six treasures" story page | Warmer sibling of tangerine |
-| `--field-brick` | `#a5493d` | Corporate gifts | Darker terracotta |
+| `--field-brick` | `#a5493d` | Decorative only | Black text on it is 3.62:1, under the 4.5 minimum. Shapes and accents, never a page field behind copy. |
 | `--field-lavender` | `#abafd6` | Feature panel (quarter-round corner) | Cool counterpoint |
 | `--field-blush` | `#f5afb9` | "Our wild way" numbered list | |
 | `--field-orchid` | `#e9a8c6` | Recipes index | |
@@ -94,6 +94,7 @@ each voice's shape. Swap them in `tokens.css` if you license the real ones.
 | Voice | Token | Original (observed) | Stand-in | Used for |
 |---|---|---|---|---|
 | Display | `--font-display` | PF Regal Display Pro (Black) | **Playfair Display** 800–900 | Headlines, card titles, list items, footer headings |
+| | | | | *Tracking is per size, not per role: -0.025em at display-1 down to -0.005em at display-5.* |
 | Mono | `--font-mono` | Tracked uppercase mono (SkillUI missed this one) | **DM Mono** 400/500 | Nav, buttons, eyebrows, tags, indices, footer links, inputs |
 | Body | `--font-body` | Graphik LG | **Hanken Grotesk** 400/500 | Paragraphs, prices, captions |
 
@@ -264,6 +265,7 @@ Durations and easings below were all extracted from the source CSS.
 
 | Token | Value |
 |---|---|
+| `--dur-press` | 120ms (the press itself: every control answers pointer-down before it acts) |
 | `--dur-fast` | 150ms (form fields, color) |
 | `--dur-base` | 300ms (most transitions) |
 | `--dur-slow` | 400ms (underline sweep) |
@@ -271,6 +273,8 @@ Durations and easings below were all extracted from the source CSS.
 | `--ease-sweep` | `cubic-bezier(0.77, 0, 0.175, 1)` (easeInOutQuart) |
 | `--ease-move` | `cubic-bezier(0.645, 0.045, 0.355, 1)` (easeInOutCubic) |
 | `--ease-out` | `cubic-bezier(0.4, 0, 0.2, 1)` |
+| `--ease-quick` | `cubic-bezier(0.2, 0, 0, 1)` (snappy, no overshoot: presses, state changes) |
+| `--ease-spring` | `linear(…)` spring with mild overshoot: only where a gesture or press preceded it |
 
 ### 9.1 Background switcher (signature)
 The page has **one** background layer. Each section declares a color (`data-color`). When a
@@ -310,8 +314,14 @@ Headlines and cards fade up 40px on first view (`--dur-slow var(--ease-out)`). T
 doesn't do this on every block, so use it sparingly.
 
 ### Reduced motion
-With `prefers-reduced-motion: reduce`: no marquee, rotation, parallax or reveal. The background
-switch becomes instant and the underline shows without the sweep.
+With `prefers-reduced-motion: reduce`, decorative loops stop entirely (marquee, rotating stamps,
+tickers) and travel is dropped. Colour and opacity still cross-fade at `--dur-fast`, so a state
+change stays legible rather than snapping: reduced motion is a calmer equivalent, not zero feedback.
+
+### Interruptibility
+State changes use CSS transitions, never one-shot keyframes, so a change part-way through
+animates from where it actually is instead of restarting. Panels that swap cross-fade in place
+and their container animates to the new height, so nothing below them jumps.
 
 ---
 

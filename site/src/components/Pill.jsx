@@ -14,6 +14,6 @@ export default function Pill({ to, href, field, children, className = '', ...res
     </span>
   )
 
-  if (to) return <Link to={to} className={cls} style={style} {...rest}>{label}</Link>
+  if (to) return <Link to={to} viewTransition className={cls} style={style} {...rest}>{label}</Link>
   return <a href={href} className={cls} style={style} {...rest}>{label}</a>
 }

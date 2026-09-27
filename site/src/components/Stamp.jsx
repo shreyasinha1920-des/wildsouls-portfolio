@@ -8,7 +8,7 @@ export default function Stamp({ text, children, size = 150, tone = 'ink', classN
   const skin = tone === 'paper' ? 'bg-paper text-ink border border-ink' : 'bg-ink text-paper'
   return (
     <div className={`relative grid place-items-center rounded-full ${skin} ${className}`} style={{ width: size, height: size }}>
-      <svg viewBox="0 0 100 100" className="absolute inset-0 size-full animate-rotate" aria-hidden>
+      <svg data-loop viewBox="0 0 100 100" className="absolute inset-0 size-full animate-rotate" aria-hidden>
         <defs>
           <path id={id} d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
         </defs>

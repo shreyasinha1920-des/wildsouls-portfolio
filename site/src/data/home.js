@@ -2,7 +2,7 @@
 export const hero = {
   title: 'AI-first Product Designer and Manager',
   lede: 'I own AI products end to end, from problem definition through what actually ships.',
-  body: "I've designed and shipped agentic AI platforms, LLM companions, enterprise SaaS products, and fintech apps. I run user research, write PRDs, set success metrics, make scope trade-offs, and work with engineering from first wireframe through production review, across regulated industries including government contracting and health.",
+  body: "I’ve designed and shipped agentic AI platforms, LLM companions, enterprise SaaS products, and fintech apps. I run user research, write PRDs, set success metrics, make scope trade-offs, and work with engineering from first wireframe through production review, across regulated industries including government contracting and health.",
 }
 
 export const clientsIntro = {
@@ -17,7 +17,7 @@ export const workIntro = {
 
 export const aiCard = {
   title: 'AI Projects',
-  tags: ['3 Prototypes', 'AI-Built', 'Live Demos'],
+  tags: ['3 Prototypes', 'AI-Built', 'Live Demos'],
   summary: 'A few things I built by working directly with AI tools, end to end, from idea to live prototype.',
 }
 
@@ -30,7 +30,7 @@ export const testimonials = {
       pull: 'Shreya delivers every time.',
       body: [
         'I had the pleasure of leading Shreya while she was a contractor to Salesforce via Red Crackle. Shreya delivers EVERY time.',
-        "Our rapport allowed for us to bounce creative ideas off each other and hone concepts into shippable customer experiences and successful business outcomes. She's data driven, design-forward, agile, and constantly adapts her skillsets.",
+        "Our rapport allowed for us to bounce creative ideas off each other and hone concepts into shippable customer experiences and successful business outcomes. She’s data driven, design-forward, agile, and constantly adapts her skillsets.",
         'Anyone would be lucky to have her on their team.',
       ],
       name: 'Adison Jazper',
@@ -52,10 +52,10 @@ export const testimonials = {
 export const about = {
   title: 'About me',
   paragraphs: [
-    "I'm Shreya Sinha, a Product Designer based in India with 5 years of experience designing digital products across e-commerce, enterprise software, education, entertainment, and fintech.",
-    "My background is unconventional. I studied Jewelry Design at the National Institute of Fashion Technology, which gave me an obsession with craft, proportion, and detail that I carry into every screen I design. I spent a year in jewelry and graphic design before finding my home in product design, and I haven't looked back.",
-    "I currently work at a digital transformation agency where I've designed products for clients including Fortive, Dexcom, MuleSoft, and Booking Holdings. I work end to end, from research and wireframes through to polished UI and full component systems.",
-    'When I\'m not designing for clients, I take on freelance work under my studio name, The Subtle Things, because the details are where the real work lives.',
+    "I’m Shreya Sinha, a Product Designer based in India with 5 years of experience designing digital products across e-commerce, enterprise software, education, entertainment, and fintech.",
+    "My background is unconventional. I studied Jewelry Design at the National Institute of Fashion Technology, which gave me an obsession with craft, proportion, and detail that I carry into every screen I design. I spent a year in jewelry and graphic design before finding my home in product design, and I haven’t looked back.",
+    "I currently work at a digital transformation agency where I’ve designed products for clients including Fortive, Dexcom, MuleSoft, and Booking Holdings. I work end to end, from research and wireframes through to polished UI and full component systems.",
+    'When I’m not designing for clients, I take on freelance work under my studio name, The Subtle Things, because the details are where the real work lives.',
   ],
   manifesto: ['I design with intention.', 'Every pixel has a reason.'],
 }
@@ -75,20 +75,20 @@ export const credentials = [
 
 export const process = {
   eyebrow: 'How I work',
-  title: "Design doesn't happen in a vacuum. Here's how it actually works.",
-  body: "I know what the ideal design process looks like. I also know how design actually works when you're collaborating with real clients and real developers under real constraints. Here's both.",
+  title: "Design doesn’t happen in a vacuum. Here’s how it actually works.",
+  body: "I know what the ideal design process looks like. I also know how design actually works when you’re collaborating with real clients and real developers under real constraints. Here’s both.",
   ideal: [
     { term: 'Research', text: 'User needs, competitive analysis, market context. Understanding the problem before touching the canvas.' },
     { term: 'Define', text: 'Information architecture, userflows, wireframes. Structure before surface.' },
     { term: 'Design', text: 'High-fidelity UI, component systems, responsive layouts. Every decision considered.' },
     { term: 'Test & iterate', text: 'Prototypes, feedback loops, refinement. Design is never done on the first pass.' },
-    { term: 'Deliver', text: "Handoff, developer collaboration, QA support. Staying involved until it's real." },
+    { term: 'Deliver', text: "Handoff, developer collaboration, QA support. Staying involved until it’s real." },
   ],
   actual: [
-    { title: 'Listen first', text: "Every project starts with a conversation: understanding what the client needs, what they've seen that they like, and what problem they're actually trying to solve. References come from both sides. Context before canvas." },
-    { title: 'First draft, fast', text: "I move to wireframes or a first design draft quickly, not because it's finished, but because people react to something real far better than they respond to abstract questions. First impressions from clients are gold." },
-    { title: 'The copy conversation', text: "One thing I always establish early: copy affects layout. I push clients to either provide their content or agree on word limits before we go too far. This one conversation saves everyone from redesigning around text that doesn't fit." },
-    { title: "Back and forth until it's right", text: 'Design is iterative by nature. I present, they respond, I adjust. This loop continues until the designs are genuinely finalized, not just signed off to meet a deadline.' },
-    { title: 'Developers are partners, not recipients', text: "I prefer when development leads are in the design meetings from the start. It means fewer surprises at handoff. When that's not possible, I make myself available throughout development. If something's unclear, I'd rather spend 10 minutes on a call than have it built wrong." },
+    { title: 'Listen first', text: "Every project starts with a conversation: understanding what the client needs, what they’ve seen that they like, and what problem they’re actually trying to solve. References come from both sides. Context before canvas." },
+    { title: 'First draft, fast', text: "I move to wireframes or a first design draft quickly, not because it’s finished, but because people react to something real far better than they respond to abstract questions. First impressions from clients are gold." },
+    { title: 'The copy conversation', text: "One thing I always establish early: copy affects layout. I push clients to either provide their content or agree on word limits before we go too far. This one conversation saves everyone from redesigning around text that doesn’t fit." },
+    { title: "Back and forth until it’s right", text: 'Design is iterative by nature. I present, they respond, I adjust. This loop continues until the designs are genuinely finalized, not just signed off to meet a deadline.' },
+    { title: 'Developers are partners, not recipients', text: "I prefer when development leads are in the design meetings from the start. It means fewer surprises at handoff. When that’s not possible, I make myself available throughout development. If something’s unclear, I’d rather spend 10 minutes on a call than have it built wrong." },
   ],
 }

@@ -61,7 +61,7 @@ export const clients = [
 
 export const testimonialPhotos = {
   "adison": "/images/testimonials/adison-jazper.webp",
-  "charlie": "/images/testimonials/charlie-temple.png"
+  "charlie": "/images/testimonials/charlie-temple.webp"
 }
 
 export const skillIcons = {
@@ -74,7 +74,7 @@ export const skillIcons = {
 export const projectMedia = {
   "ai-projects": {
     "card": {
-      "src": "/images/projects/ai-projects/card.png",
+      "src": "/images/projects/ai-projects/card.webp",
       "width": 600,
       "height": 235
     },
@@ -190,7 +190,7 @@ export const projectMedia = {
         "title": "04 — Drill-down without getting lost",
         "items": [
           {
-            "src": "/images/projects/earthly-lunar/drill-down-view.png",
+            "src": "/images/projects/earthly-lunar/drill-down-view.webp",
             "alt": "drill-down-view",
             "role": "image",
             "width": 1067,
@@ -228,7 +228,7 @@ export const projectMedia = {
   },
   "ebb": {
     "card": {
-      "src": "/images/projects/ebb/card.png",
+      "src": "/images/projects/ebb/card.webp",
       "width": 600,
       "height": 235
     },
@@ -508,7 +508,7 @@ export const projectMedia = {
         "title": "Wireframes",
         "items": [
           {
-            "src": "/images/projects/ebb/wireframes.png",
+            "src": "/images/projects/ebb/wireframes.webp",
             "alt": "wireframes",
             "role": "image",
             "width": 1067,
@@ -647,7 +647,7 @@ export const projectMedia = {
         "title": "10x Genomics",
         "items": [
           {
-            "src": "/images/projects/eightfold-career-pages/10x.png",
+            "src": "/images/projects/eightfold-career-pages/10x.webp",
             "alt": "10x",
             "role": "image",
             "width": 500,
@@ -766,7 +766,7 @@ export const projectMedia = {
   },
   "herstories": {
     "card": {
-      "src": "/images/projects/herstories/card.png",
+      "src": "/images/projects/herstories/card.webp",
       "width": 600,
       "height": 235
     },
@@ -976,14 +976,14 @@ export const projectMedia = {
             "height": 844
           },
           {
-            "src": "/images/projects/herstories/avatar-customization.png",
+            "src": "/images/projects/herstories/avatar-customization.webp",
             "alt": "Avatar customization",
             "role": "image",
             "width": 390,
             "height": 844
           },
           {
-            "src": "/images/projects/herstories/onboarding-coin-earning.png",
+            "src": "/images/projects/herstories/onboarding-coin-earning.webp",
             "alt": "Onboarding — coin earning",
             "role": "image",
             "width": 390,
@@ -1127,7 +1127,7 @@ export const projectMedia = {
         "title": "Share & Distribution",
         "items": [
           {
-            "src": "/images/projects/pdf-to-web/share-options.png",
+            "src": "/images/projects/pdf-to-web/share-options.webp",
             "alt": "share options",
             "role": "image",
             "width": 1067,
@@ -1167,7 +1167,7 @@ export const projectMedia = {
             "height": 508
           },
           {
-            "src": "/images/projects/pdf-to-web/mobile-view.png",
+            "src": "/images/projects/pdf-to-web/mobile-view.webp",
             "alt": "Mobile view",
             "role": "image",
             "width": 501,
@@ -1186,7 +1186,7 @@ export const projectMedia = {
   },
   "redcrackle": {
     "card": {
-      "src": "/images/projects/redcrackle/card.png",
+      "src": "/images/projects/redcrackle/card.webp",
       "width": 600,
       "height": 235
     },
@@ -1312,7 +1312,7 @@ export const projectMedia = {
   },
   "rocketpages-project": {
     "card": {
-      "src": "/images/projects/rocketpages-project/card.jpg",
+      "src": "/images/projects/rocketpages-project/card.webp",
       "width": 910,
       "height": 455
     },
@@ -1409,7 +1409,7 @@ export const projectMedia = {
         "title": "Component Library",
         "items": [
           {
-            "src": "/images/projects/rocketpages-project/component-library.png",
+            "src": "/images/projects/rocketpages-project/component-library.webp",
             "alt": "Component library",
             "role": "image",
             "width": 600,
@@ -1435,7 +1435,7 @@ export const projectMedia = {
             "height": 450
           },
           {
-            "src": "/images/projects/rocketpages-project/gallery-component.png",
+            "src": "/images/projects/rocketpages-project/gallery-component.webp",
             "alt": "Gallery component",
             "role": "image",
             "width": 600,
@@ -1468,7 +1468,7 @@ export const projectMedia = {
   },
   "rootwords-project": {
     "card": {
-      "src": "/images/projects/rootwords-project/card.png",
+      "src": "/images/projects/rootwords-project/card.webp",
       "width": 600,
       "height": 235
     },
@@ -1686,7 +1686,7 @@ export const projectMedia = {
         "title": "01 — Conversational AI interface",
         "items": [
           {
-            "src": "/images/projects/safal-ai/conversational-ai.png",
+            "src": "/images/projects/safal-ai/conversational-ai.webp",
             "alt": "conversational_ai",
             "role": "image",
             "width": 1440,
@@ -1710,7 +1710,7 @@ export const projectMedia = {
         "title": "03 — User Management",
         "items": [
           {
-            "src": "/images/projects/safal-ai/user-management.png",
+            "src": "/images/projects/safal-ai/user-management.webp",
             "alt": "User-management",
             "role": "image",
             "width": 1440,
@@ -1845,7 +1845,7 @@ export const projectMedia = {
         "title": "01 — Trust Architecture",
         "items": [
           {
-            "src": "/images/projects/vitalsthailand/trust-signal-vitals-thailand.png",
+            "src": "/images/projects/vitalsthailand/trust-signal-vitals-thailand.webp",
             "alt": "trust-signal-vitals-thailand",
             "role": "image",
             "width": 1067,
@@ -1857,7 +1857,7 @@ export const projectMedia = {
         "title": "02 — Filter & Discovery System",
         "items": [
           {
-            "src": "/images/projects/vitalsthailand/plp-vitals-thailand.png",
+            "src": "/images/projects/vitalsthailand/plp-vitals-thailand.webp",
             "alt": "PLP-Vitals-Thailand",
             "role": "image",
             "width": 1067,
@@ -1881,7 +1881,7 @@ export const projectMedia = {
         "title": "04 — Doc Vitals AI",
         "items": [
           {
-            "src": "/images/projects/vitalsthailand/docvitals-vitals-thailand.png",
+            "src": "/images/projects/vitalsthailand/docvitals-vitals-thailand.webp",
             "alt": "docvitals-Vitals-Thailand",
             "role": "image",
             "width": 1067,
@@ -1938,14 +1938,14 @@ export const projectMedia = {
         "title": "Screen Highlights",
         "items": [
           {
-            "src": "/images/projects/vitalsthailand/vitals.png",
+            "src": "/images/projects/vitalsthailand/vitals.webp",
             "alt": "Vitals",
             "role": "image",
             "width": 800,
             "height": 600
           },
           {
-            "src": "/images/projects/vitalsthailand/pdp.png",
+            "src": "/images/projects/vitalsthailand/pdp.webp",
             "alt": "pdp",
             "role": "image",
             "width": 800,

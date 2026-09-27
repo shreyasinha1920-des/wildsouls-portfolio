@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-24 overflow-hidden border-y border-ink py-5" aria-hidden>
-        <div className="flex w-max animate-ticker items-center gap-10">
+        <div data-loop className="flex w-max animate-ticker items-center gap-10">
           {run.map((m, i) => (
             <span key={i} className="flex items-center gap-10 text-display-4 whitespace-nowrap">
               {m} <Spark />
@@ -38,7 +38,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="container-wild py-8 font-mono text-mono-sm uppercase">© 2026 Shreya Sinha · The Subtle Things</p>
+      <p className="container-wild py-8 font-mono text-mono-sm uppercase [padding-bottom:max(40px,env(safe-area-inset-bottom))]">
+        © {new Date().getFullYear()} Shreya Sinha · The Subtle Things
+      </p>
     </Field>
   )
 }

@@ -28,7 +28,7 @@ export const caseStudies = {
         "label": "Product Designer"
       }
     ],
-    "meta": "Earthly Lunar · Earthly.dev · RedCrackle's Client",
+    "meta": "Earthly Lunar · Earthly.dev · RedCrackle’s Client",
     "sections": [
       {
         "title": "The Brief",
@@ -61,7 +61,7 @@ export const caseStudies = {
             ]
           },
           {
-            "text": "The dashboard surfaces all of this in real time — tracking adherence scores, domain health, active initiatives, and service-level compliance across an entire organization's engineering infrastructure."
+            "text": "The dashboard surfaces all of this in real time — tracking adherence scores, domain health, active initiatives, and service-level compliance across an entire organization’s engineering infrastructure."
           }
         ]
       },
@@ -72,7 +72,7 @@ export const caseStudies = {
             "title": "Engineering Leaders",
             "blocks": [
               {
-                "text": "They need the 30,000-foot view — overall adherence scores, domain health trends, initiative progress, and risk signals across the entire organization. They're making strategic decisions. They need clarity, not detail."
+                "text": "They need the 30,000-foot view — overall adherence scores, domain health trends, initiative progress, and risk signals across the entire organization. They’re making strategic decisions. They need clarity, not detail."
               }
             ]
           },
@@ -80,7 +80,7 @@ export const caseStudies = {
             "title": "Developers",
             "blocks": [
               {
-                "text": "They need the ground-level view — specific feedback on their PRs, guardrail violations in their repositories, and actionable next steps. They're making tactical decisions. They need precision, not breadth."
+                "text": "They need the ground-level view — specific feedback on their PRs, guardrail violations in their repositories, and actionable next steps. They’re making tactical decisions. They need precision, not breadth."
               },
               {
                 "text": "I designed the dashboard to serve both — a high-level organization overview that leaders can scan in seconds, and drill-down views that give developers exactly the detail they need without the noise."
@@ -148,7 +148,7 @@ export const caseStudies = {
     "slug": "ebb",
     "eyebrow": "Design sprint",
     "title": "Ebb",
-    "hook": "Designing a fintech app in 10 days using 8 AI tools.",
+    "hook": "Designing a fintech app in 10 days using 8 AI tools.",
     "tags": [
       "Fintech",
       "Mobile App",
@@ -157,7 +157,7 @@ export const caseStudies = {
     ],
     "stats": [
       {
-        "value": "10 Days",
+        "value": "10 Days",
         "label": "Design Sprint"
       },
       {
@@ -184,7 +184,7 @@ export const caseStudies = {
             "text": "Ebb gives freelancers one thing above everything else: a number they can trust."
           },
           {
-            "text": "\"When income is anything but steady.\""
+            "text": "“When income is anything but steady.”"
           }
         ]
       },
@@ -280,7 +280,7 @@ export const caseStudies = {
             "title": "Income anxiety even in good months",
             "blocks": [
               {
-                "text": "High income months don't feel secure because a slow month could follow. The emotional experience of freelance finances is anxiety regardless of current balance."
+                "text": "High income months don’t feel secure because a slow month could follow. The emotional experience of freelance finances is anxiety regardless of current balance."
               }
             ]
           },
@@ -288,7 +288,7 @@ export const caseStudies = {
             "title": "Tax as an afterthought",
             "blocks": [
               {
-                "text": "Freelancers are responsible for their own taxes but most don't set money aside proactively. By tax season, the money is gone."
+                "text": "Freelancers are responsible for their own taxes but most don’t set money aside proactively. By tax season, the money is gone."
               }
             ]
           },
@@ -296,7 +296,7 @@ export const caseStudies = {
             "title": "Fragmented income tracking",
             "blocks": [
               {
-                "text": "WhatsApp to chase invoices. Notes to track what's owed. Bank statement to confirm what arrived. There's no single place to see everything."
+                "text": "WhatsApp to chase invoices. Notes to track what’s owed. Bank statement to confirm what arrived. There’s no single place to see everything."
               }
             ]
           },
@@ -304,14 +304,14 @@ export const caseStudies = {
             "title": "Savings advice calibrated for the wrong person",
             "blocks": [
               {
-                "text": "\"Save 20% of your income\" is built for salaried employees. For a freelancer, 20% means something completely different every month."
+                "text": "“Save 20% of your income” is built for salaried employees. For a freelancer, 20% means something completely different every month."
               }
             ]
           }
         ],
         "blocks": [
           {
-            "text": "Five pain points that existing tools don't solve:"
+            "text": "Five pain points that existing tools don’t solve:"
           }
         ]
       },
@@ -338,7 +338,7 @@ export const caseStudies = {
             "title": "Wave",
             "blocks": [
               {
-                "text": "Genuinely free and functional. No smart savings, no income prediction, no mobile-first experience. Users use it because it's free, not because they love it."
+                "text": "Genuinely free and functional. No smart savings, no income prediction, no mobile-first experience. Users use it because it’s free, not because they love it."
               }
             ]
           },
@@ -370,7 +370,7 @@ export const caseStudies = {
                 "text": "Earns ₹45,000–₹1,80,000/month. Tracks income in Notes. Guesses at taxes. Made more money this year than ever and stressed about money more than ever."
               },
               {
-                "text": "\"I made more money this year than ever before. I also stressed about money more than ever before. Those two things shouldn't both be true.\""
+                "text": "“I made more money this year than ever before. I also stressed about money more than ever before. Those two things shouldn’t both be true.”"
               }
             ]
           },
@@ -381,7 +381,7 @@ export const caseStudies = {
                 "text": "Earns $800–$3,500/month across INR and USD clients. Uses a spreadsheet, Wise, and a separate savings account. Knows January is always slow. Forgets to save in December every single year."
               },
               {
-                "text": "\"I've been doing this for five years. I should have figured out the money thing by now. I haven't.\""
+                "text": "“I’ve been doing this for five years. I should have figured out the money thing by now. I haven’t.”"
               }
             ]
           }
@@ -391,7 +391,7 @@ export const caseStudies = {
         "title": "Information Architecture",
         "blocks": [
           {
-            "text": "I used Relume to generate an initial sitemap from a text prompt — describing Ebb's core features and target user. The AI produced a reasonable starting structure that I then refined based on the research insights."
+            "text": "I used Relume to generate an initial sitemap from a text prompt — describing Ebb’s core features and target user. The AI produced a reasonable starting structure that I then refined based on the research insights."
           },
           {
             "term": "What Relume got right",
@@ -399,7 +399,7 @@ export const caseStudies = {
           },
           {
             "term": "What I changed",
-            "text": "Relume suggested a separate \"Reports\" section. I removed it — Ebb is not an accounting tool. Everything a freelancer needs to feel in control should be visible on the dashboard, not buried in a reports tab."
+            "text": "Relume suggested a separate “Reports” section. I removed it — Ebb is not an accounting tool. Everything a freelancer needs to feel in control should be visible on the dashboard, not buried in a reports tab."
           },
           {
             "text": "This is where AI as a starting point — not a final answer — showed its value most clearly."
@@ -429,7 +429,7 @@ export const caseStudies = {
             "title": "Mood Board — via Microsoft Designer",
             "blocks": [
               {
-                "text": "The visual direction: calm, warm, minimal. A product that feels like it's on your side — not judging your spending, not overwhelming you with data. Like a financially savvy friend, not a bank."
+                "text": "The visual direction: calm, warm, minimal. A product that feels like it’s on your side — not judging your spending, not overwhelming you with data. Like a financially savvy friend, not a bank."
               }
             ]
           }
@@ -447,10 +447,10 @@ export const caseStudies = {
           },
           {
             "term": "What I refined",
-            "text": "The Safe-to-Spend number needed far more visual hierarchy than Uizard gave it — it's the hero of the entire app and needed to feel like it. I also restructured the onboarding flow — Uizard's version felt transactional, not welcoming."
+            "text": "The Safe-to-Spend number needed far more visual hierarchy than Uizard gave it — it’s the hero of the entire app and needed to feel like it. I also restructured the onboarding flow — Uizard’s version felt transactional, not welcoming."
           },
           {
-            "text": "The wireframes weren't the answer. They were the starting point that let me get to the answer faster."
+            "text": "The wireframes weren’t the answer. They were the starting point that let me get to the answer faster."
           }
         ]
       },
@@ -499,41 +499,41 @@ export const caseStudies = {
           },
           {
             "term": "Safe-to-spend label",
-            "text": "\"Safe to spend today\" (not \"Available balance\" — that's a bank term, not a freelance term)"
+            "text": "“Safe to spend today” (not “Available balance” — that’s a bank term, not a freelance term)"
           },
           {
             "term": "Smart Save suggestion",
-            "text": "\"Based on your last 3 months, we suggest saving ₹12,000 this month — a bit more than usual while things are going well.\""
+            "text": "“Based on your last 3 months, we suggest saving ₹12,000 this month — a bit more than usual while things are going well.”"
           },
           {
             "term": "Low income alert",
-            "text": "\"Heads up — this month is looking quieter than usual. We've adjusted your safe-to-spend to help you stay comfortable.\""
+            "text": "“Heads up — this month is looking quieter than usual. We’ve adjusted your safe-to-spend to help you stay comfortable.”"
           },
           {
             "term": "Empty state — Dashboard",
-            "text": "\"Your financial picture starts here. Add your first income to see what you can safely spend.\""
+            "text": "“Your financial picture starts here. Add your first income to see what you can safely spend.”"
           },
           {
             "term": "Tax Pocket tooltip",
-            "text": "\"We set aside this percentage automatically every time income lands. You'll never be surprised by tax season again.\""
+            "text": "“We set aside this percentage automatically every time income lands. You’ll never be surprised by tax season again.”"
           },
           {
             "term": "Onboarding — final step",
-            "text": "\"Ebb works best when you're honest with it. The more you add, the better your safe-to-spend number gets.\""
+            "text": "“Ebb works best when you’re honest with it. The more you add, the better your safe-to-spend number gets.”"
           }
         ]
       },
       {
-        "title": "Reflections — Where AI Helped and Where It Didn't",
+        "title": "Reflections — Where AI Helped and Where It Didn’t",
         "items": [
           {
             "title": "Where AI genuinely helped",
             "blocks": [
               {
-                "text": "Research acceleration — competitor analysis and persona development that would have taken two days took two hours. The outputs weren't perfect but they were good enough to build on."
+                "text": "Research acceleration — competitor analysis and persona development that would have taken two days took two hours. The outputs weren’t perfect but they were good enough to build on."
               },
               {
-                "text": "Starting points — Relume's sitemap and Uizard's wireframes gave me something to react to rather than starting from blank. Reacting is faster than originating."
+                "text": "Starting points — Relume’s sitemap and Uizard’s wireframes gave me something to react to rather than starting from blank. Reacting is faster than originating."
               },
               {
                 "text": "Copy generation — Claude generated first drafts of every piece of microcopy. I refined them, but having something to edit rather than something to create from nothing saved significant time."
@@ -550,7 +550,7 @@ export const caseStudies = {
                 "text": "Emotional design — no AI tool understood that the safe-to-spend number needed to feel reassuring, not alarming. That hierarchy decision was entirely human."
               },
               {
-                "text": "What to cut — Relume suggested features I knew weren't right for this user. AI doesn't understand what to leave out. Restraint is a human skill."
+                "text": "What to cut — Relume suggested features I knew weren’t right for this user. AI doesn’t understand what to leave out. Restraint is a human skill."
               },
               {
                 "text": "The feeling — the difference between a dashboard that feels like a bank and one that feels like a friend is entirely in the details. Typography weight, number size, card spacing, color temperature. AI generated the ingredients. I cooked the meal."
@@ -560,10 +560,10 @@ export const caseStudies = {
         ],
         "blocks": [
           {
-            "text": "AI is a force multiplier, not a replacement. This project took 10 days instead of 6 weeks."
+            "text": "AI is a force multiplier, not a replacement. This project took 10 days instead of 6 weeks."
           },
           {
-            "text": "The quality didn't suffer — it improved, because I spent my time on the decisions that actually required human judgment."
+            "text": "The quality didn’t suffer — it improved, because I spent my time on the decisions that actually required human judgment."
           }
         ]
       },
@@ -588,10 +588,10 @@ export const caseStudies = {
         "title": "Outcome",
         "blocks": [
           {
-            "text": "Ebb is a concept product — designed to demonstrate AI-augmented design workflow in a real fintech context. It proved that a complete, polished mobile app can go from brief to prototype in 10 days when AI tools are used strategically at every stage."
+            "text": "Ebb is a concept product — designed to demonstrate AI-augmented design workflow in a real fintech context. It proved that a complete, polished mobile app can go from brief to prototype in 10 days when AI tools are used strategically at every stage."
           },
           {
-            "text": "The more interesting outcome: a clear, documented map of exactly where AI adds value in a design process — and where it doesn't. That map is more useful than any single screen."
+            "text": "The more interesting outcome: a clear, documented map of exactly where AI adds value in a design process — and where it doesn’t. That map is more useful than any single screen."
           }
         ]
       }
@@ -629,10 +629,10 @@ export const caseStudies = {
         "title": "The Brief",
         "blocks": [
           {
-            "text": "Eightfold is an enterprise talent intelligence platform used by large organizations to manage their hiring. Each company gets a career page built within Eightfold's infrastructure — but the design must feel completely native to their brand, not like a generic job board."
+            "text": "Eightfold is an enterprise talent intelligence platform used by large organizations to manage their hiring. Each company gets a career page built within Eightfold’s infrastructure — but the design must feel completely native to their brand, not like a generic job board."
           },
           {
-            "text": "My job: take each client's brand identity and translate it faithfully into a career page experience within Eightfold's platform constraints. Five clients, five completely different visual languages, all delivered as live, production-ready designs."
+            "text": "My job: take each client’s brand identity and translate it faithfully into a career page experience within Eightfold’s platform constraints. Five clients, five completely different visual languages, all delivered as live, production-ready designs."
           }
         ]
       },
@@ -640,10 +640,10 @@ export const caseStudies = {
         "title": "The Challenge",
         "blocks": [
           {
-            "text": "Designing within a platform is a different skill than designing from scratch. Every decision had to work within Eightfold's component structure while still feeling authentically on-brand for each client. The constraint was the brief."
+            "text": "Designing within a platform is a different skill than designing from scratch. Every decision had to work within Eightfold’s component structure while still feeling authentically on-brand for each client. The constraint was the brief."
           },
           {
-            "text": "The result: five career pages that feel like extensions of each company's existing brand — not five versions of the same template."
+            "text": "The result: five career pages that feel like extensions of each company’s existing brand — not five versions of the same template."
           }
         ]
       },
@@ -658,7 +658,7 @@ export const caseStudies = {
             },
             "blocks": [
               {
-                "text": "Dexcom is a medical technology company specializing in continuous glucose monitoring. The career page reflects their brand identity — clean, precise, and mission-driven. The design leads with their core purpose: game-changing technology, life-changing work. Regional navigation (Global, North America, EMEA, Asia-Pacific) surfaces immediately — critical for a company hiring across multiple global markets. The visual language is clinical and confident, matching Dexcom's position as a healthcare technology leader."
+                "text": "Dexcom is a medical technology company specializing in continuous glucose monitoring. The career page reflects their brand identity — clean, precise, and mission-driven. The design leads with their core purpose: game-changing technology, life-changing work. Regional navigation (Global, North America, EMEA, Asia-Pacific) surfaces immediately — critical for a company hiring across multiple global markets. The visual language is clinical and confident, matching Dexcom’s position as a healthcare technology leader."
               }
             ]
           },
@@ -682,7 +682,7 @@ export const caseStudies = {
             },
             "blocks": [
               {
-                "text": "Ralliant is an industrial technology company spun off from Fortive — newer, more energetic, with a distinct brand voice. \"Make an impact every day\" leads the page — a more dynamic, forward-looking tone than its parent company. The design reflects Ralliant's positioning as a company where careers are defined by breakthrough moments. Orange brand color used confidently. The page feels distinct from Fortive despite sharing a lineage."
+                "text": "Ralliant is an industrial technology company spun off from Fortive — newer, more energetic, with a distinct brand voice. “Make an impact every day” leads the page — a more dynamic, forward-looking tone than its parent company. The design reflects Ralliant’s positioning as a company where careers are defined by breakthrough moments. Orange brand color used confidently. The page feels distinct from Fortive despite sharing a lineage."
               }
             ]
           },
@@ -694,7 +694,7 @@ export const caseStudies = {
             },
             "blocks": [
               {
-                "text": "10x Genomics is a life sciences company accelerating the mastery of biology. The career page reflects their scientific precision and innovative positioning — a company at the cutting edge of genomics research. The design balances scientific credibility with human warmth, reflecting a company that's both rigorous and mission-driven."
+                "text": "10x Genomics is a life sciences company accelerating the mastery of biology. The career page reflects their scientific precision and innovative positioning — a company at the cutting edge of genomics research. The design balances scientific credibility with human warmth, reflecting a company that’s both rigorous and mission-driven."
               }
             ]
           },
@@ -706,7 +706,7 @@ export const caseStudies = {
             },
             "blocks": [
               {
-                "text": "Booking Holdings is one of the world's largest travel companies — parent to Booking.com, Priceline, and other global travel brands. The COE (Centre of Excellence) career page needed to represent the full Booking Holdings family while positioning the COE specifically as a talent destination. The design is polished and global — reflecting a company operating at worldwide scale with multiple brand properties."
+                "text": "Booking Holdings is one of the world’s largest travel companies — parent to Booking.com, Priceline, and other global travel brands. The COE (Centre of Excellence) career page needed to represent the full Booking Holdings family while positioning the COE specifically as a talent destination. The design is polished and global — reflecting a company operating at worldwide scale with multiple brand properties."
               }
             ]
           }
@@ -719,7 +719,7 @@ export const caseStudies = {
             "title": "01 — Brand Immersion",
             "blocks": [
               {
-                "text": "Before touching any design tool, I studied each client's existing brand — their main website, their visual language, their typography, their color usage, their tone of voice. The career page had to feel like it belonged to the same family."
+                "text": "Before touching any design tool, I studied each client’s existing brand — their main website, their visual language, their typography, their color usage, their tone of voice. The career page had to feel like it belonged to the same family."
               }
             ]
           },
@@ -727,7 +727,7 @@ export const caseStudies = {
             "title": "02 — Platform Constraints First",
             "blocks": [
               {
-                "text": "Understanding what Eightfold's platform could and couldn't do shaped every decision. Working within constraints isn't a limitation — it's a design problem with a defined solution space."
+                "text": "Understanding what Eightfold’s platform could and couldn’t do shaped every decision. Working within constraints isn’t a limitation — it’s a design problem with a defined solution space."
               }
             ]
           },
@@ -735,7 +735,7 @@ export const caseStudies = {
             "title": "03 — Brand Translation",
             "blocks": [
               {
-                "text": "Taking each company's visual identity and applying it to Eightfold's component structure — hero imagery, navigation, typography, color, content hierarchy. The goal was always the same: a visitor landing on the career page should feel immediately that they're in the right place."
+                "text": "Taking each company’s visual identity and applying it to Eightfold’s component structure — hero imagery, navigation, typography, color, content hierarchy. The goal was always the same: a visitor landing on the career page should feel immediately that they’re in the right place."
               }
             ]
           },
@@ -761,7 +761,7 @@ export const caseStudies = {
         "title": "Outcome",
         "blocks": [
           {
-            "text": "All five career pages are live and actively used for hiring across some of the world's largest industrial technology and life sciences companies. Every page is a faithful translation of its brand — distinct, considered, and production-ready."
+            "text": "All five career pages are live and actively used for hiring across some of the world’s largest industrial technology and life sciences companies. Every page is a faithful translation of its brand — distinct, considered, and production-ready."
           },
           {
             "text": "Five companies. Five completely different experiences. One designer."
@@ -783,7 +783,7 @@ export const caseStudies = {
     ],
     "stats": [
       {
-        "value": "2 Weeks",
+        "value": "2 Weeks",
         "label": "Design Duration"
       },
       {
@@ -860,7 +860,7 @@ export const caseStudies = {
         "title": "The gap",
         "blocks": [
           {
-            "text": "None of these gave users a sense of personal identity within the app. You're always a passive reader, never part of the story. HerStories would change that."
+            "text": "None of these gave users a sense of personal identity within the app. You’re always a passive reader, never part of the story. HerStories would change that."
           }
         ]
       },
@@ -879,10 +879,10 @@ export const caseStudies = {
             "text": "Casual · Casual Friday · Summer Look"
           },
           {
-            "text": "This wasn't a cosmetic feature — it was a core UX decision. By giving users a character to invest in, the app creates emotional ownership. You're not just reading a story. You're in it."
+            "text": "This wasn’t a cosmetic feature — it was a core UX decision. By giving users a character to invest in, the app creates emotional ownership. You’re not just reading a story. You’re in it."
           },
           {
-            "text": "The avatar also drives the coin economy — users earn coins through reading activity and spend them on character upgrades, early episode access, and customization items. It's a retention mechanic that feels like a reward rather than a paywall."
+            "text": "The avatar also drives the coin economy — users earn coins through reading activity and spend them on character upgrades, early episode access, and customization items. It’s a retention mechanic that feels like a reward rather than a paywall."
           }
         ]
       },
@@ -928,7 +928,7 @@ export const caseStudies = {
                 "text": "Character display, featured slider, selected stories highlighted, genre rows — most content-rich variant"
               },
               {
-                "text": "This exploration wasn't about finding one right answer — it was about understanding the tension between personalization (showing the user's avatar and reading history) and discovery (showing what's new and trending). Different users would respond differently to each approach."
+                "text": "This exploration wasn’t about finding one right answer — it was about understanding the tension between personalization (showing the user’s avatar and reading history) and discovery (showing what’s new and trending). Different users would respond differently to each approach."
               }
             ]
           }
@@ -954,7 +954,7 @@ export const caseStudies = {
             "title": "Ranking System",
             "blocks": [
               {
-                "text": "Trending and Popular tabs with numbered charts — giving users a social signal about what's worth reading. Genre filters: Drama, Fantasy, Comedy, Action, Slice of Life, Romance, Thriller, Mystery, Supernatural, Sports, Sci-Fi, Superhero."
+                "text": "Trending and Popular tabs with numbered charts — giving users a social signal about what’s worth reading. Genre filters: Drama, Fantasy, Comedy, Action, Slice of Life, Romance, Thriller, Mystery, Supernatural, Sports, Sci-Fi, Superhero."
               }
             ]
           },
@@ -962,7 +962,7 @@ export const caseStudies = {
             "title": "My Stories Library",
             "blocks": [
               {
-                "text": "Reading history with Recent, Subscribed, and My Comments tabs. Reading/Unread/Finished filters. Episode-level tracking — \"1 episode unread\", \"You're caught up.\""
+                "text": "Reading history with Recent, Subscribed, and My Comments tabs. Reading/Unread/Finished filters. Episode-level tracking — “1 episode unread”, “You’re caught up.”"
               }
             ]
           },
@@ -970,7 +970,7 @@ export const caseStudies = {
             "title": "Community",
             "blocks": [
               {
-                "text": "A social feed with text discussion posts, polls with countdown timers, and photo posts. Each with likes, comments, and view counts. Story-specific community spaces — \"Dark Eyes Family\", \"Under the Stars\" fan communities."
+                "text": "A social feed with text discussion posts, polls with countdown timers, and photo posts. Each with likes, comments, and view counts. Story-specific community spaces — “Dark Eyes Family”, “Under the Stars” fan communities."
               }
             ]
           },
@@ -991,7 +991,7 @@ export const caseStudies = {
         "title": "Outcome",
         "blocks": [
           {
-            "text": "HerStories was two weeks of genuine UX exploration — competitor research, avatar system, five homepage variants, community features, and a complete settings architecture. It didn't reach production. But it established a clear design direction: an app where reading feels personal, social, and yours."
+            "text": "HerStories was two weeks of genuine UX exploration — competitor research, avatar system, five homepage variants, community features, and a complete settings architecture. It didn’t reach production. But it established a clear design direction: an app where reading feels personal, social, and yours."
           },
           {
             "text": "The project is paused. The direction is solid."
@@ -1014,7 +1014,7 @@ export const caseStudies = {
     ],
     "stats": [
       {
-        "value": "6 Months",
+        "value": "6 Months",
         "label": "Project Duration"
       },
       {
@@ -1035,10 +1035,10 @@ export const caseStudies = {
             "text": "MuleSoft had a problem that most enterprise companies share — years of valuable technical content locked inside PDFs. Long whitepapers on microservices, API patterns, integration architecture. Genuinely useful material for developers. Almost impossible to actually read."
           },
           {
-            "text": "The brief was deceptively simple: turn PDFs into web experiences. The reality was considerably more complex — the solution needed to simultaneously solve for SEO discoverability, user engagement, content analytics tracking, lead generation through form gates, and MuleSoft's ability to cross-promote their products throughout the reading experience."
+            "text": "The brief was deceptively simple: turn PDFs into web experiences. The reality was considerably more complex — the solution needed to simultaneously solve for SEO discoverability, user engagement, content analytics tracking, lead generation through form gates, and MuleSoft’s ability to cross-promote their products throughout the reading experience."
           },
           {
-            "text": "I worked directly with MuleSoft's Product Manager and an Analytics Developer — a rare collaboration that meant design decisions were validated with real tracking data, not just intuition."
+            "text": "I worked directly with MuleSoft’s Product Manager and an Analytics Developer — a rare collaboration that meant design decisions were validated with real tracking data, not just intuition."
           }
         ]
       },
@@ -1049,7 +1049,7 @@ export const caseStudies = {
             "title": "Discoverability",
             "blocks": [
               {
-                "text": "PDFs are invisible to search engines. Years of valuable technical content was generating zero organic traffic because it couldn't be indexed. Converting to web pages meant every section became searchable, linkable, and shareable."
+                "text": "PDFs are invisible to search engines. Years of valuable technical content was generating zero organic traffic because it couldn’t be indexed. Converting to web pages meant every section became searchable, linkable, and shareable."
               }
             ]
           },
@@ -1065,7 +1065,7 @@ export const caseStudies = {
             "title": "Trackability",
             "blocks": [
               {
-                "text": "PDFs tell you nothing about how people engage with your content. The web experience was designed with a comprehensive analytics layer — tracking form fills, time on page, pages clicked through, share button interactions, and \"Ask an Expert\" conversions. For the first time, MuleSoft could understand how developers actually consumed their content."
+                "text": "PDFs tell you nothing about how people engage with your content. The web experience was designed with a comprehensive analytics layer — tracking form fills, time on page, pages clicked through, share button interactions, and “Ask an Expert” conversions. For the first time, MuleSoft could understand how developers actually consumed their content."
               }
             ]
           }
@@ -1080,7 +1080,7 @@ export const caseStudies = {
         "title": "The Design Solution",
         "blocks": [
           {
-            "text": "The solution was a three-column web experience modelled after MuleSoft's existing design language — studied, validated with their design lead, and built to feel native to their site."
+            "text": "The solution was a three-column web experience modelled after MuleSoft’s existing design language — studied, validated with their design lead, and built to feel native to their site."
           },
           {
             "term": "Left Rail — Navigation",
@@ -1088,11 +1088,11 @@ export const caseStudies = {
           },
           {
             "term": "Content Area — Centre",
-            "text": "Each PDF section became its own web page — with a clear H1 title, read time indicator, and content formatted following MuleSoft's blog typography and image treatment. Pagination at the bottom connected pages sequentially. The visual and information load of a 40-minute PDF was reduced to digestible, focused sections."
+            "text": "Each PDF section became its own web page — with a clear H1 title, read time indicator, and content formatted following MuleSoft’s blog typography and image treatment. Pagination at the bottom connected pages sequentially. The visual and information load of a 40-minute PDF was reduced to digestible, focused sections."
           },
           {
             "term": "Right Rail — Context",
-            "text": "Related content tiles, cross-promotional MuleSoft products, and an \"Ask an Expert\" CTA. This was the business value layer — every reading session became an opportunity to surface relevant products and capture leads from an already-engaged audience."
+            "text": "Related content tiles, cross-promotional MuleSoft products, and an “Ask an Expert” CTA. This was the business value layer — every reading session became an opportunity to surface relevant products and capture leads from an already-engaged audience."
           }
         ]
       },
@@ -1151,7 +1151,7 @@ export const caseStudies = {
         "title": "Two PDF Types — Two Templates",
         "blocks": [
           {
-            "text": "The project tested two content lengths: a long-form whitepaper and a short-form document. Each rendered differently in the web experience — the navigation depth, pagination structure, and content hierarchy adapted to the length of the source material. This wasn't one template applied universally — it was a system flexible enough to handle different content structures gracefully."
+            "text": "The project tested two content lengths: a long-form whitepaper and a short-form document. Each rendered differently in the web experience — the navigation depth, pagination structure, and content hierarchy adapted to the length of the source material. This wasn’t one template applied universally — it was a system flexible enough to handle different content structures gracefully."
           }
         ]
       },
@@ -1184,7 +1184,7 @@ export const caseStudies = {
     ],
     "stats": [
       {
-        "value": "~4 Months",
+        "value": "~4 Months",
         "label": "Project Duration"
       },
       {
@@ -1208,13 +1208,13 @@ export const caseStudies = {
         ],
         "blocks": [
           {
-            "text": "RedCrackle is a full-service digital transformation agency — serving Fortune 500 companies and startups across design transformation, web and mobile development, e-commerce, AI & ML, analytics, and interactive web experiences. Founded in 2012, the company had grown significantly but its visual identity hadn't kept pace."
+            "text": "RedCrackle is a full-service digital transformation agency — serving Fortune 500 companies and startups across design transformation, web and mobile development, e-commerce, AI & ML, analytics, and interactive web experiences. Founded in 2012, the company had grown significantly but its visual identity hadn’t kept pace."
           },
           {
             "text": "My job: create a complete brand identity — wordmark, color palette, visual system — and design the full website from scratch. Everything needed to feel modern, sleek, and impactful. Not stock. Not generic agency."
           },
           {
-            "text": "The challenge wasn't just design — it was navigating two completely opposing creative directions within the organization."
+            "text": "The challenge wasn’t just design — it was navigating two completely opposing creative directions within the organization."
           }
         ]
       },
@@ -1231,7 +1231,7 @@ export const caseStudies = {
             "text": "My solution: popping colors, minimal design. Take the energy and confidence of the first vision. Apply it with the restraint and sophistication of the second. The result is a brand that stands out without shouting — bold enough to be memorable, clean enough to feel credible."
           },
           {
-            "text": "This is the design decision I'm most proud of on this project. It required understanding what both stakeholders actually wanted beneath their stated preferences — and finding the intersection."
+            "text": "This is the design decision I’m most proud of on this project. It required understanding what both stakeholders actually wanted beneath their stated preferences — and finding the intersection."
           }
         ]
       },
@@ -1279,7 +1279,7 @@ export const caseStudies = {
             "title": "About Us",
             "blocks": [
               {
-                "text": "RedCrackle's story — from a Drupal-focused startup in 2012 to a global digital transformation agency with clients including PayPal, eBay, MuleSoft, and others. The About page balances the founder's story with the team's expertise."
+                "text": "RedCrackle’s story — from a Drupal-focused startup in 2012 to a global digital transformation agency with clients including PayPal, eBay, MuleSoft, and others. The About page balances the founder’s story with the team’s expertise."
               }
             ]
           },
@@ -1287,7 +1287,7 @@ export const caseStudies = {
             "title": "Case Studies",
             "blocks": [
               {
-                "text": "A portfolio section showcasing client work — the evidence behind the agency's claims. Designed to be browsable and filterable by service type."
+                "text": "A portfolio section showcasing client work — the evidence behind the agency’s claims. Designed to be browsable and filterable by service type."
               }
             ]
           }
@@ -1311,7 +1311,7 @@ export const caseStudies = {
             ]
           },
           {
-            "text": "Each service page follows a consistent structure — the problem it solves, RedCrackle's approach, and case study references. The navigation is structured so users can move between services without losing context."
+            "text": "Each service page follows a consistent structure — the problem it solves, RedCrackle’s approach, and case study references. The navigation is structured so users can move between services without losing context."
           }
         ]
       },
@@ -1322,7 +1322,7 @@ export const caseStudies = {
         "title": "Outcome",
         "blocks": [
           {
-            "text": "The RedCrackle brand identity and website are live at redcrackle.com — actively used to pitch and win clients including Fortune 500 companies. The visual system is in daily use across the agency's communications."
+            "text": "The RedCrackle brand identity and website are live at redcrackle.com — actively used to pitch and win clients including Fortune 500 companies. The visual system is in daily use across the agency’s communications."
           },
           {
             "text": "Completed in approximately four months alongside client project work."
@@ -1335,7 +1335,7 @@ export const caseStudies = {
     "slug": "rocketpages-project",
     "eyebrow": "Project",
     "title": "RocketPages",
-    "hook": "Designing a website builder for people who've never built a website.",
+    "hook": "Designing a website builder for people who’ve never built a website.",
     "tags": [
       "SaaS",
       "Web Application",
@@ -1345,7 +1345,7 @@ export const caseStudies = {
     ],
     "stats": [
       {
-        "value": "~1 Year",
+        "value": "~1 Year",
         "label": "Project Duration"
       },
       {
@@ -1374,7 +1374,7 @@ export const caseStudies = {
         "title": "The Problem",
         "blocks": [
           {
-            "text": "Platforms like Wix, Squarespace, and Weblium are powerful. They're also overwhelming. Most small business owners end up hiring designers or platform specialists just to use them — defeating the entire point of a no-code tool."
+            "text": "Platforms like Wix, Squarespace, and Weblium are powerful. They’re also overwhelming. Most small business owners end up hiring designers or platform specialists just to use them — defeating the entire point of a no-code tool."
           },
           {
             "text": "Three things needed to change:"
@@ -1382,7 +1382,7 @@ export const caseStudies = {
           {
             "list": [
               "Too many components and options for a user with no design background",
-              "No clear starting point — users didn't know where to begin",
+              "No clear starting point — users didn’t know where to begin",
               "The editor felt built for designers, not business owners"
             ]
           },
@@ -1451,7 +1451,7 @@ export const caseStudies = {
                 "text": "Learn it once on the hero section, and you already know how to edit the gallery, the pricing table, and the contact form. That consistency was the most important UX decision in the project."
               },
               {
-                "text": "Global Theme lets users set brand colors, font pairings, and button styles once — applied everywhere automatically. Instead of infinite options, I offered curated choices: a palette library, pre-tested font pairs, button style presets. Choices that can't go wrong."
+                "text": "Global Theme lets users set brand colors, font pairings, and button styles once — applied everywhere automatically. Instead of infinite options, I offered curated choices: a palette library, pre-tested font pairs, button style presets. Choices that can’t go wrong."
               }
             ]
           }
@@ -1496,7 +1496,7 @@ export const caseStudies = {
             ]
           },
           {
-            "text": "The most meaningful outcome isn't a number. It's that people who previously couldn't have a website now do."
+            "text": "The most meaningful outcome isn’t a number. It’s that people who previously couldn’t have a website now do."
           }
         ]
       }
@@ -1516,7 +1516,7 @@ export const caseStudies = {
     ],
     "stats": [
       {
-        "value": "1 Month",
+        "value": "1 Month",
         "label": "Design Duration"
       },
       {
@@ -1540,7 +1540,7 @@ export const caseStudies = {
         ],
         "blocks": [
           {
-            "text": "RootWords is a vocabulary learning app built around a simple but powerful insight: if you understand the Latin and Greek roots of words, you can decode the meaning of thousands of words you've never seen before. The app targets students from middle school through college — plus healthcare students learning medical terminology and professionals studying for standardized tests like the SAT, ACT, and IELTS."
+            "text": "RootWords is a vocabulary learning app built around a simple but powerful insight: if you understand the Latin and Greek roots of words, you can decode the meaning of thousands of words you’ve never seen before. The app targets students from middle school through college — plus healthcare students learning medical terminology and professionals studying for standardized tests like the SAT, ACT, and IELTS."
           },
           {
             "text": "The challenge: vocabulary learning is notoriously dry. The brief was to make it genuinely fun — not just add a points system on top of flashcards, but design something that felt like play from the first screen."
@@ -1554,7 +1554,7 @@ export const caseStudies = {
             "text": "The centrepiece of RootWords is a slot-machine mechanic for word learning. Instead of passively reading flashcards, users spin a slot machine that combines roots, prefixes, and suffixes to form words. The randomness creates surprise. The combination mechanic teaches pattern recognition. The spinning creates anticipation."
           },
           {
-            "text": "It's the same dopamine loop that makes slot machines compelling — applied to something genuinely useful. You don't feel like you're studying. You feel like you're playing."
+            "text": "It’s the same dopamine loop that makes slot machines compelling — applied to something genuinely useful. You don’t feel like you’re studying. You feel like you’re playing."
           }
         ]
       },
@@ -1573,7 +1573,7 @@ export const caseStudies = {
             "title": "Test",
             "blocks": [
               {
-                "text": "Structured assessment mode — how well do you actually know what you've learned? Tracks progress and identifies weak spots."
+                "text": "Structured assessment mode — how well do you actually know what you’ve learned? Tracks progress and identifies weak spots."
               }
             ]
           },
@@ -1599,7 +1599,7 @@ export const caseStudies = {
         "title": "Branding",
         "blocks": [
           {
-            "text": "The RootWords brand needed to feel smart but approachable — not intimidating like a textbook, not childish like a kids' app. It needed to appeal to a 14-year-old studying for the SAT and a 24-year-old studying for medical school at the same time."
+            "text": "The RootWords brand needed to feel smart but approachable — not intimidating like a textbook, not childish like a kids’ app. It needed to appeal to a 14-year-old studying for the SAT and a 24-year-old studying for medical school at the same time."
           },
           {
             "text": "The visual identity balances playfulness and credibility — a mark that feels confident and distinctive without taking itself too seriously."
@@ -1678,7 +1678,7 @@ export const caseStudies = {
             "title": "Past Performances",
             "blocks": [
               {
-                "text": "An AI that searches and summarizes government contracts. Ask it a question in plain English — \"Summarize five contracts where technical assistance is a specific task\" or \"Compile a list of contracts where Safal was the subcontractor\" — and it surfaces the relevant contracts with a structured answer."
+                "text": "An AI that searches and summarizes government contracts. Ask it a question in plain English — “Summarize five contracts where technical assistance is a specific task” or “Compile a list of contracts where Safal was the subcontractor” — and it surfaces the relevant contracts with a structured answer."
               }
             ]
           },
@@ -1686,7 +1686,7 @@ export const caseStudies = {
             "title": "Resume AI",
             "blocks": [
               {
-                "text": "Searches employee expertise across the organization. Ask \"Who in our company has experience in a specific industry sector?\" or \"Which employees have worked on projects similar to this description?\" and it finds the right people instantly — removing the reliance on who knows whom."
+                "text": "Searches employee expertise across the organization. Ask “Who in our company has experience in a specific industry sector?” or “Which employees have worked on projects similar to this description?” and it finds the right people instantly — removing the reliance on who knows whom."
               }
             ]
           },
@@ -1724,7 +1724,7 @@ export const caseStudies = {
             "text": "Read-only access to AI tools — can query and view results but cannot modify the knowledge base or manage users."
           },
           {
-            "text": "The interface adapts to each role — Admins see management controls, Viewers don't. The same platform, three different experiences, zero confusion about what each user can and can't do."
+            "text": "The interface adapts to each role — Admins see management controls, Viewers don’t. The same platform, three different experiences, zero confusion about what each user can and can’t do."
           }
         ]
       },
@@ -1735,7 +1735,7 @@ export const caseStudies = {
             "title": "01 — Conversational AI interface",
             "blocks": [
               {
-                "text": "Each AI tool uses a chat-style interface — users type a natural language query and receive a structured answer. Query history is saved in a collapsible sidebar organized by time period (Previous 7 days, Previous 30 days) so users can revisit and build on previous searches. A loading state — \"Fetching results, this might take a moment\" — manages expectations during AI processing."
+                "text": "Each AI tool uses a chat-style interface — users type a natural language query and receive a structured answer. Query history is saved in a collapsible sidebar organized by time period (Previous 7 days, Previous 30 days) so users can revisit and build on previous searches. A loading state — “Fetching results, this might take a moment” — manages expectations during AI processing."
               }
             ]
           },
@@ -1743,7 +1743,7 @@ export const caseStudies = {
             "title": "02 — Knowledge Base",
             "blocks": [
               {
-                "text": "Beyond the three AI tools, I designed a Knowledge Base — a managed repository of documents and resources that feeds the AI's responses. Admins can add, edit, rename, and delete entries through a clean modal interface. This gives the Safal team control over what the AI knows and ensures responses stay accurate and current."
+                "text": "Beyond the three AI tools, I designed a Knowledge Base — a managed repository of documents and resources that feeds the AI’s responses. Admins can add, edit, rename, and delete entries through a clean modal interface. This gives the Safal team control over what the AI knows and ensures responses stay accurate and current."
               }
             ]
           },
@@ -1773,7 +1773,7 @@ export const caseStudies = {
         "blocks": [
           {
             "list": [
-              "Safal's team can now answer in seconds questions that previously required hours of manual document search-48% less time spent searching and validating opportunities, expertise, and contract sources.",
+              "Safal’s team can now answer in seconds questions that previously required hours of manual document search-48% less time spent searching and validating opportunities, expertise, and contract sources.",
               "Designed for two user roles across three AI-powered tools — with full authentication, query history, source references, and knowledge base management.",
               "A complete internal AI platform that transforms years of institutional knowledge into an instantly searchable, conversational interface."
             ]
@@ -1796,7 +1796,7 @@ export const caseStudies = {
     ],
     "stats": [
       {
-        "value": "3 Months",
+        "value": "3 Months",
         "label": "Website Redesign"
       },
       {
@@ -1814,7 +1814,7 @@ export const caseStudies = {
         "title": "The Brief",
         "blocks": [
           {
-            "text": "Vitals is a Bangkok-based health supplement retailer — vitamins, proteins, fish oils, collagen — sold online and across three physical stores in Bangkok. Their website had a critical problem: it didn't look like a business worth trusting."
+            "text": "Vitals is a Bangkok-based health supplement retailer — vitamins, proteins, fish oils, collagen — sold online and across three physical stores in Bangkok. Their website had a critical problem: it didn’t look like a business worth trusting."
           },
           {
             "text": "My job was to redesign the entire platform from the ground up — web and mobile — and then design the CMS that would let the Vitals team manage it independently."
@@ -1828,7 +1828,7 @@ export const caseStudies = {
             "title": "No discoverability",
             "blocks": [
               {
-                "text": "Products existed in an infinite scroll. No proper filters. If you knew exactly what you wanted, you still couldn't find it efficiently."
+                "text": "Products existed in an infinite scroll. No proper filters. If you knew exactly what you wanted, you still couldn’t find it efficiently."
               }
             ]
           },
@@ -1886,7 +1886,7 @@ export const caseStudies = {
       },
       {
         "title": "Direction",
-        "statement": "iHerb's trust architecture + HK Vitals' influencer discovery pattern + local warmth that neither global player could offer."
+        "statement": "iHerb’s trust architecture + HK Vitals’ influencer discovery pattern + local warmth that neither global player could offer."
       },
       {
         "title": "Key Design Decisions",
@@ -1895,7 +1895,7 @@ export const caseStudies = {
             "title": "01 — Trust Architecture",
             "blocks": [
               {
-                "text": "\"100% Genuine. 100% Guaranteed.\" isn't decoration — it's an answer to the question every new visitor asks. I introduced trust signals at every critical touchpoint: homepage, product cards, product detail pages, and checkout. Reviews with star breakdowns, stock availability, social proof counters, and clear payment information — all designed to answer doubt before it forms."
+                "text": "“100% Genuine. 100% Guaranteed.” isn’t decoration — it’s an answer to the question every new visitor asks. I introduced trust signals at every critical touchpoint: homepage, product cards, product detail pages, and checkout. Reviews with star breakdowns, stock availability, social proof counters, and clear payment information — all designed to answer doubt before it forms."
               }
             ]
           },
@@ -1903,7 +1903,7 @@ export const caseStudies = {
             "title": "02 — Filter & Discovery System",
             "blocks": [
               {
-                "text": "Category, Brands, Price Range in Thai Baht, Offers/Discounts — with active filter chips and sort options. Product cards carry contextual badges: Trending, New Arrival, Selling Fast, Expert Recommended. And critically: an empty state — \"No Products Found\" — because what happens when things go wrong matters as much as the happy path."
+                "text": "Category, Brands, Price Range in Thai Baht, Offers/Discounts — with active filter chips and sort options. Product cards carry contextual badges: Trending, New Arrival, Selling Fast, Expert Recommended. And critically: an empty state — “No Products Found” — because what happens when things go wrong matters as much as the happy path."
               }
             ]
           },
@@ -1911,7 +1911,7 @@ export const caseStudies = {
             "title": "03 — Expert Pages",
             "blocks": [
               {
-                "text": "Vitals works with real Thai influencers — beauty experts, fitness models, athletes. Each expert has a profile page showing their recommended products with their personal endorsement. It's social proof and product discovery combined. Users who follow Topz (Mister Supranational Thailand) can see exactly what he takes and buy it in two taps."
+                "text": "Vitals works with real Thai influencers — beauty experts, fitness models, athletes. Each expert has a profile page showing their recommended products with their personal endorsement. It’s social proof and product discovery combined. Users who follow Topz (Mister Supranational Thailand) can see exactly what he takes and buy it in two taps."
               }
             ]
           },
@@ -1930,10 +1930,10 @@ export const caseStudies = {
             "title": "05 — Edge Cases as Trust Signals",
             "blocks": [
               {
-                "text": "Most designers design the happy path. I designed what happens when things go wrong — because that's where trust is actually built or lost."
+                "text": "Most designers design the happy path. I designed what happens when things go wrong — because that’s where trust is actually built or lost."
               },
               {
-                "text": "Low stock warnings. Sold out with Notify Me email capture. Items going out of stock during checkout. Payment failure with alternative method prompt. Network error with branded screen. Each state is invisible when everything works — and essential when it doesn't."
+                "text": "Low stock warnings. Sold out with Notify Me email capture. Items going out of stock during checkout. Payment failure with alternative method prompt. Network error with branded screen. Each state is invisible when everything works — and essential when it doesn’t."
               }
             ]
           },
@@ -1947,7 +1947,7 @@ export const caseStudies = {
                 "text": "I designed a full content management system that gives the Vitals team complete editorial independence — managing products, banners, blog posts, expert profiles, and promotional content without needing a developer for every update."
               },
               {
-                "text": "This is what makes the redesign sustainable long-term. The front-end experience is only as good as the team's ability to keep it fresh and accurate."
+                "text": "This is what makes the redesign sustainable long-term. The front-end experience is only as good as the team’s ability to keep it fresh and accurate."
               }
             ]
           }

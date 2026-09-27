@@ -1,21 +1,23 @@
 import { useLightbox } from './Lightbox'
 import Media from './Media'
 
-// A screenshot that opens full size in the lightbox. `fit` caps its height so a
-// tall capture never swallows the scroll.
-export default function ZoomImage({ item, alt, className = '', imgClassName = '', eager }) {
+// A screenshot that opens full size in the lightbox, growing out of this
+// thumbnail's position. Height caps live on the caller so a tall capture never
+// swallows the scroll.
+export default function ZoomImage({ item, alt, label, className = '', imgClassName = '', eager }) {
   const open = useLightbox()
   if (!item) return null
-  const label = alt ?? item.alt ?? ''
+  const imgAlt = alt ?? item.alt ?? ''
+  const name = label ?? imgAlt
 
   return (
     <button
       type="button"
-      onClick={() => open({ src: item.src, alt: label })}
+      onClick={(e) => open({ src: item.src, alt: name }, e.currentTarget.getBoundingClientRect())}
       className={`group block cursor-zoom-in overflow-hidden rounded-card ${className}`}
-      aria-label={label ? `Enlarge: ${label}` : 'Enlarge image'}
+      aria-label={name ? `Enlarge: ${name}` : 'Enlarge image'}
     >
-      <Media item={item} alt={label} eager={eager} className={`transition-transform duration-slow ease-move group-hover:scale-[1.02] ${imgClassName}`} />
+      <Media item={item} alt={imgAlt} eager={eager} className={`transition-transform duration-slow ease-move group-hover:scale-[1.02] group-active:scale-100 ${imgClassName}`} />
     </button>
   )
 }

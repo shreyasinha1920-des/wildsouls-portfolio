@@ -6,14 +6,14 @@ import Media from './Media'
 // then title, tags, summary and the outcome line.
 export default function ArchCard({ to, title, tags = [], summary, outcome, image, color, eager = false }) {
   return (
-    <Link to={to} className="group flex flex-col">
+    <Link to={to} viewTransition className="group flex flex-col">
       <div className="relative px-5 pt-14">
         <div aria-hidden className="absolute inset-x-0 top-0 bottom-10 rounded-arch" style={{ background: fieldVar(color) }} />
         <Media
           item={image}
           alt=""
           eager={eager}
-          className="relative aspect-[5/2] w-full rounded-card object-cover object-top transition-transform duration-base ease-move group-hover:-translate-y-2"
+          className="relative aspect-[5/2] w-full rounded-card object-cover object-top transition-transform duration-base ease-spring group-hover:-translate-y-2 group-active:-translate-y-0.5"
         />
       </div>
       <h3 className="mt-6 text-display-4">

@@ -8,8 +8,8 @@ export default function ClientLogos() {
   const row = [...clients, ...clients] // two copies → seamless -50% loop
 
   return (
-    <div className="group overflow-hidden" aria-label="Clients">
-      <ul className="flex w-max animate-ticker items-center gap-12 mix-blend-multiply group-hover:[animation-play-state:paused]">
+    <div className="group overflow-hidden" role="group" aria-label="Clients">
+      <ul data-loop className="flex w-max animate-ticker items-center gap-12 mix-blend-multiply group-hover:[animation-play-state:paused]">
         {row.map((c, i) => (
           <li key={i} aria-hidden={i >= clients.length || undefined}>
             <img
