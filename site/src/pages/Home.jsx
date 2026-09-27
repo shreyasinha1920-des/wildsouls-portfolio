@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import ArchCard from '../components/ArchCard'
 import ClientLogos from '../components/ClientLogos'
 import Field from '../components/Field'
@@ -8,21 +9,78 @@ import WorkIndex from '../components/WorkIndex'
 import { about, aiCard, clientsIntro, credentials, hero, process, skills, testimonials, workIntro } from '../data/home'
 import { brand, projectMedia, skillIcons, testimonialPhotos } from '../data/media'
 import { contact, projects } from '../data/projects'
+import { COPY_IN, DURATION, gsap, LINES_IN, SplitText, useGSAP } from '../lib/motion'
 
 export default function Home() {
   const featured = projects.filter((p) => p.featured)
   const more = projects.filter((p) => !p.featured).map((p) => ({ ...p, image: projectMedia[p.slug].card }))
+  const heroRef = useRef(null)
+
+  // Hero entrance. The headline leads, the portrait grows out of its arch beside
+  // it, and the supporting copy and CTAs follow in reading order. Overlapping
+  // starts keep the whole thing inside ~1.2s so it reads as one movement.
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia()
+      const q = gsap.utils.selector(heroRef)
+
+      mm.add(
+        { reduce: '(prefers-reduced-motion: reduce)', full: '(prefers-reduced-motion: no-preference)' },
+        (ctx) => {
+          const { reduce } = ctx.conditions
+          const supporting = [q('[data-hero="lede"]'), q('[data-hero="body"]'), q('[data-hero="cta"] > *')]
+
+          // Reduced motion keeps the sequence, drops the travel.
+          if (reduce) {
+            gsap.from([q('[data-hero="title"]'), ...supporting.flat(), q('[data-hero="art"] > *')], {
+              autoAlpha: 0,
+              duration: 0.3,
+              stagger: 0.05,
+            })
+            return
+          }
+
+          // autoSplit re-splits if Playfair lands late or the box is resized;
+          // returning the timeline lets SplitText keep it in sync.
+          SplitText.create(q('[data-hero="title"]'), {
+            type: 'lines',
+            mask: 'lines',
+            autoSplit: true,
+            onSplit(self) {
+              const tl = gsap.timeline()
+              return tl
+                .from(self.lines, { ...LINES_IN }, 0)
+                .from(q('[data-hero="disc"]'), { scale: 0.6, autoAlpha: 0, duration: DURATION.shape, ease: 'back.out(1.4)' }, 0.1)
+                .from(
+                  q('[data-hero="portrait"]'),
+                  { scaleY: 0.92, autoAlpha: 0, duration: DURATION.shape, transformOrigin: 'bottom center' },
+                  0.15,
+                )
+                .from(q('[data-hero="lede"]'), COPY_IN, 0.4)
+                .from(q('[data-hero="body"]'), COPY_IN, 0.5)
+                .from(q('[data-hero="cta"] > *'), { ...COPY_IN, stagger: 0.08 }, 0.6)
+                .from(q('[data-hero="stamp"]'), { autoAlpha: 0, scale: 0.9, duration: DURATION.copy }, 0.75)
+            },
+          })
+        },
+      )
+    },
+    { scope: heroRef },
+  )
 
   return (
     <>
       {/* ── Hero ── */}
-      <Field field="terracotta" className="pt-24 pb-section" aria-labelledby="hero-title">
+      <Field field="terracotta" className="pt-24 pb-section" aria-labelledby="hero-title" ref={heroRef}>
         <div className="container-wild grid items-center gap-16 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h1 id="hero-title" className="text-display-1 font-black">{hero.title}</h1>
-            <p className="mt-8 max-w-[30ch] text-display-5">{hero.lede}</p>
-            <p className="mt-5 max-w-[60ch]">{hero.body}</p>
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
+            {/* split-safe: text-wrap: balance interferes with line splitting */}
+            <h1 id="hero-title" data-hero="title" className="text-display-1 font-black [text-wrap:initial]">
+              {hero.title}
+            </h1>
+            <p data-hero="lede" className="mt-8 max-w-[30ch] text-display-5">{hero.lede}</p>
+            <p data-hero="body" className="mt-5 max-w-[60ch]">{hero.body}</p>
+            <div data-hero="cta" className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
               <Pill href="#work">View my work</Pill>
               <a href={contact.resume} target="_blank" rel="noreferrer" className="link-sweep link-sweep--on eyebrow">
                 Download resume
@@ -30,12 +88,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[400px] lg:col-span-5">
-            <div aria-hidden className="absolute -top-8 -right-8 size-3/4 rounded-full bg-field-butter" />
-            <div className="relative overflow-hidden rounded-arch bg-field-lavender">
+          <div data-hero="art" className="relative mx-auto w-full max-w-[400px] lg:col-span-5">
+            <div data-hero="disc" aria-hidden className="absolute -top-8 -right-8 size-3/4 rounded-full bg-field-butter will-change-transform" />
+            <div data-hero="portrait" className="relative overflow-hidden rounded-arch bg-field-lavender will-change-transform">
               <Media item={{ src: brand.portrait, width: 1254, height: 1254 }} alt="Portrait of Shreya Sinha" eager className="aspect-[4/5] w-full object-cover" />
             </div>
-            <Stamp text="5 years · Based in India · Open to work · " size={150} className="absolute -bottom-10 left-0 lg:-left-10">
+            <Stamp data-hero="stamp" text="5 years · Based in India · Open to work · " size={150} className="absolute -bottom-10 left-0 lg:-left-10">
               <span className="text-display-4 font-black">SS</span>
             </Stamp>
           </div>

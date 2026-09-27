@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Link, useParams } from 'react-router'
 import Carousel from '../components/Carousel'
 import FeatureTabs from '../components/FeatureTabs'
@@ -11,6 +12,7 @@ import { projectMedia } from '../data/media'
 import { getNextProject, getProject } from '../data/projects'
 import { fieldVar } from '../hooks/useBackgroundSwitcher'
 import { altText } from '../lib/alt'
+import { COPY_IN, gsap, LINES_IN, SplitText, useGSAP } from '../lib/motion'
 import NotFound from './NotFound'
 
 const GALLERY = /^(screen highlights|key screens)$/i
@@ -65,24 +67,64 @@ function CaseStudyBody({ project, cs }) {
 }
 
 function Header({ project, cs, hero, accent }) {
+  const ref = useRef(null)
+
+  // Half the length of the home hero: this plays on all ten case studies and on
+  // every back-and-forth, so it introduces the page without holding it up.
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia()
+      const q = gsap.utils.selector(ref)
+      const supporting = [q('[data-cs="eyebrow"]'), q('[data-cs="hook"]'), q('[data-cs="tags"] > *')].flat()
+
+      mm.add({ reduce: '(prefers-reduced-motion: reduce)', full: '(prefers-reduced-motion: no-preference)' }, (ctx) => {
+        if (ctx.conditions.reduce) {
+          gsap.from([q('[data-cs="title"]'), ...supporting, q('[data-cs="art"]')], {
+            autoAlpha: 0,
+            duration: 0.25,
+            stagger: 0.04,
+          })
+          return
+        }
+
+        SplitText.create(q('[data-cs="title"]'), {
+          type: 'lines',
+          mask: 'lines',
+          autoSplit: true,
+          onSplit(self) {
+            return gsap
+              .timeline()
+              .from(self.lines, { ...LINES_IN, duration: 0.55, stagger: 0.06 }, 0)
+              .from(q('[data-cs="eyebrow"]'), { ...COPY_IN, duration: 0.4 }, 0.05)
+              .from(q('[data-cs="art"]'), { scale: 0.96, autoAlpha: 0, duration: 0.6 }, 0.1)
+              .from(q('[data-cs="hook"]'), { ...COPY_IN, duration: 0.4 }, 0.3)
+              .from(q('[data-cs="tags"] > *'), { ...COPY_IN, duration: 0.35, stagger: 0.05 }, 0.4)
+          },
+        })
+      })
+    },
+    { scope: ref },
+  )
+
   return (
-    <Field field={project.color} className="pt-24 pb-24" aria-labelledby="cs-title">
+    <Field field={project.color} className="pt-24 pb-24" aria-labelledby="cs-title" ref={ref}>
       <div className="container-wild">
         <div className="grid items-center gap-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <Link to="/#work" viewTransition className="link-sweep eyebrow mb-6 inline-block">
               ← All work
             </Link>
-            <p className="eyebrow mb-3">{cs.eyebrow === 'Project' ? 'Case study' : cs.eyebrow}</p>
-            <h1 id="cs-title" className="text-display-1 font-black">{cs.title}</h1>
-            <p className="mt-6 max-w-[30ch] text-display-5">{cs.hook}</p>
-            <ul className="mt-8 flex flex-wrap gap-2" aria-label="Project type">
+            <p data-cs="eyebrow" className="eyebrow mb-3">{cs.eyebrow === 'Project' ? 'Case study' : cs.eyebrow}</p>
+            {/* split-safe: text-wrap: balance interferes with line splitting */}
+            <h1 id="cs-title" data-cs="title" className="text-display-1 font-black [text-wrap:initial]">{cs.title}</h1>
+            <p data-cs="hook" className="mt-6 max-w-[30ch] text-display-5">{cs.hook}</p>
+            <ul data-cs="tags" className="mt-8 flex flex-wrap gap-2" aria-label="Project type">
               {cs.tags.map((t) => (
                 <li key={t} className="rounded-pill border border-ink px-4 py-1 font-mono text-mono-sm uppercase">{t}</li>
               ))}
             </ul>
           </div>
-          <div className="relative lg:col-span-6">
+          <div data-cs="art" className="relative will-change-transform lg:col-span-6">
             <div aria-hidden className="absolute inset-x-5 -top-10 bottom-10 rounded-arch" style={{ background: fieldVar(accent) }} />
             <ZoomImage item={hero} alt={`${cs.title} overview`} eager className="relative" imgClassName="w-full" />
           </div>
