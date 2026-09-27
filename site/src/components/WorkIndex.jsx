@@ -1,38 +1,93 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { Link } from 'react-router'
 import { fieldVar } from '../hooks/useBackgroundSwitcher'
+import { gsap, useGSAP } from '../lib/motion'
 import Media from './Media'
 
-// Compact ruled index of projects. On hover-capable pointers a preview follows
-// the cursor; keyboard focus parks the same preview beside the focused row, so
-// tabbing through the list shows what clicking would open. On touch, each row
-// carries its image inline.
+// Compact ruled index of projects.
+//
+// On a mouse, a preview trails the cursor: quickTo reuses one tween per axis, so
+// every pointer move retargets the motion in flight instead of stacking tweens,
+// and the card banks slightly into the direction of travel. Keyboard focus parks
+// the same preview beside the focused row. On touch, each row carries its image
+// inline and none of this runs.
 export default function WorkIndex({ items }) {
-  const [active, setActive] = useState(null)
+  const root = useRef(null)
   const preview = useRef(null)
+  const media = useRef(null)
+  const active = useRef(null)
+  const move = useRef(() => {})
+  const show = useRef(() => {})
+  const hide = useRef(() => {})
 
-  const placeAt = (x, y) => {
-    if (preview.current) preview.current.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`
-  }
-  const move = (e) => placeAt(e.clientX + 30, e.clientY - 100)
-  const follow = (p) => (e) => {
-    // Park the preview at the right edge of the focused row.
-    const r = e.currentTarget.getBoundingClientRect()
-    placeAt(Math.min(r.right - 380, window.innerWidth - 380), r.top)
-    setActive(p)
-  }
+  useGSAP(
+    () => {
+      const card = preview.current
+      const mm = gsap.matchMedia()
+
+      mm.add(
+        {
+          reduce: '(prefers-reduced-motion: reduce)',
+          full: '(prefers-reduced-motion: no-preference) and (hover: hover)',
+        },
+        (ctx) => {
+          if (!ctx.conditions.full) return // no preview on touch or under reduced motion
+
+          gsap.set(card, { xPercent: -50, yPercent: -50, autoAlpha: 0, scale: 0.92 })
+
+          const xTo = gsap.quickTo(card, 'x', { duration: 0.45, ease: 'power3' })
+          const yTo = gsap.quickTo(card, 'y', { duration: 0.45, ease: 'power3' })
+          const tiltTo = gsap.quickTo(card, 'rotation', { duration: 0.6, ease: 'power3' })
+
+          let lastX = 0
+          let lastT = 0
+
+          move.current = (e) => {
+            const now = performance.now()
+            const dt = Math.max(now - lastT, 16)
+            // Bank into the direction of travel, capped so it stays a hint.
+            tiltTo(gsap.utils.clamp(-7, 7, ((e.clientX - lastX) / dt) * 6))
+            lastX = e.clientX
+            lastT = now
+            xTo(e.clientX + 190)
+            yTo(e.clientY)
+          }
+
+          show.current = (item, atRect) => {
+            active.current = item
+            if (media.current) {
+              media.current.src = item.image.src
+              preview.current.style.setProperty('--preview-bg', fieldVar(item.color))
+            }
+            if (atRect) {
+              // Keyboard: park it beside the row, no trailing.
+              gsap.set(card, { x: Math.min(atRect.right - 200, window.innerWidth - 220), y: atRect.top + atRect.height / 2, rotation: 0 })
+            }
+            gsap.to(card, { autoAlpha: 1, scale: 1, duration: 0.3, ease: 'power3.out', overwrite: 'auto' })
+          }
+
+          hide.current = () => {
+            active.current = null
+            // Reverses from wherever it is: no waiting for the entrance to finish.
+            gsap.to(card, { autoAlpha: 0, scale: 0.92, duration: 0.25, ease: 'power2.out', overwrite: 'auto' })
+          }
+        },
+      )
+    },
+    { scope: root },
+  )
 
   return (
-    <div onPointerMove={move} onPointerLeave={() => setActive(null)}>
+    <div ref={root} onPointerMove={(e) => move.current(e)} onPointerLeave={() => hide.current()}>
       <ul className="border-t border-ink">
         {items.map((p) => (
           <li key={p.slug} className="border-b border-ink">
             <Link
               to={`/${p.slug}`}
               viewTransition
-              onPointerEnter={(e) => e.pointerType === 'mouse' && setActive(p)}
-              onFocus={follow(p)}
-              onBlur={() => setActive(null)}
+              onPointerEnter={(e) => e.pointerType === 'mouse' && show.current(p)}
+              onFocus={(e) => show.current(p, e.currentTarget.getBoundingClientRect())}
+              onBlur={() => hide.current()}
               className="group grid gap-x-6 gap-y-3 py-6 md:grid-cols-12 md:items-baseline"
             >
               <span className="md:hidden">
@@ -51,14 +106,9 @@ export default function WorkIndex({ items }) {
       <div
         ref={preview}
         aria-hidden
-        className="pointer-events-none fixed top-0 left-0 z-20 hidden w-[360px] [@media(hover:hover)]:block"
+        className="pointer-events-none fixed top-0 left-0 z-20 hidden w-[340px] rounded-card p-3 [background:var(--preview-bg,transparent)] [@media(hover:hover)]:block"
       >
-        <div
-          className={`rounded-card p-3 transition-[opacity,scale] duration-base ease-spring ${active ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}
-          style={{ background: active ? fieldVar(active.color) : 'transparent' }}
-        >
-          {active && <Media item={active.image} alt="" eager className="aspect-[5/2] w-full rounded-card object-cover object-top" />}
-        </div>
+        <img ref={media} alt="" className="aspect-[5/2] w-full rounded-card object-cover object-top" />
       </div>
     </div>
   )

@@ -1,6 +1,10 @@
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { altText } from '../lib/alt'
+import { gsap } from '../lib/motion'
 import ZoomImage from './ZoomImage'
+
+gsap.registerPlugin(ScrollToPlugin)
 
 const isTall = (i) => i.height > i.width * 1.2
 const prefersReducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
@@ -32,11 +36,18 @@ export default function Carousel({ items, label }) {
     }
   }, [readEdges])
 
-  const move = (dir) =>
-    ref.current?.scrollBy({
-      left: dir * ref.current.clientWidth * 0.8,
-      behavior: prefersReducedMotion() ? 'auto' : 'smooth',
-    })
+  const move = (dir) => {
+    const el = ref.current
+    if (!el) return
+    const target = el.scrollLeft + dir * el.clientWidth * 0.8
+    if (prefersReducedMotion()) {
+      el.scrollLeft = target
+      return
+    }
+    // overwrite kills the tween in flight and picks up from where it is, so
+    // holding the arrow tracks the clicks instead of queueing them.
+    gsap.to(el, { scrollTo: { x: target }, duration: 0.5, ease: 'power2.out', overwrite: true })
+  }
 
   return (
     <div>
