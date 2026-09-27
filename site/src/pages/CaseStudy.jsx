@@ -3,6 +3,7 @@ import Carousel from '../components/Carousel'
 import FeatureTabs from '../components/FeatureTabs'
 import Field from '../components/Field'
 import Media from '../components/Media'
+import Pill from '../components/Pill'
 import Prose from '../components/Prose'
 import ZoomImage from '../components/ZoomImage'
 import { caseStudies } from '../data/caseStudies'
@@ -328,16 +329,23 @@ function NextProject({ next }) {
   const card = projectMedia[next.slug].card
   return (
     <Field field={next.color} className="py-section">
-      <Link to={`/${next.slug}`} viewTransition className="group container-wild grid items-center gap-10 md:grid-cols-12">
+      <div className="group container-wild grid items-center gap-10 md:grid-cols-12">
         <div className="md:col-span-7">
           <p className="eyebrow mb-3">Next case study</p>
-          <p className="text-display-1 font-black"><span className="link-sweep">{next.title}</span></p>
+          <Link to={`/${next.slug}`} viewTransition className="text-display-1 font-black">
+            <span className="link-sweep">{next.title}</span>
+          </Link>
           <p className="mt-5 max-w-[50ch]">{next.summary}</p>
+          {/* Forward is the default, but the way out of the loop is right beside it. */}
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Pill to={`/${next.slug}`}>Read case study</Pill>
+            <Pill to="/#work" ghost>See all projects</Pill>
+          </div>
         </div>
-        <div className="md:col-span-5">
-          <Media item={card} alt="" className="aspect-[5/2] w-full rounded-card object-cover object-top transition-transform duration-base ease-move group-hover:-translate-y-2" />
-        </div>
-      </Link>
+        <Link to={`/${next.slug}`} viewTransition aria-hidden tabIndex={-1} className="md:col-span-5">
+          <Media item={card} alt="" className="aspect-[5/2] w-full rounded-card object-cover object-top transition-transform duration-base ease-spring group-hover:-translate-y-2 group-active:-translate-y-0.5" />
+        </Link>
+      </div>
     </Field>
   )
 }

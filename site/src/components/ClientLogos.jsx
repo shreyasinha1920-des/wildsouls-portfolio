@@ -1,14 +1,33 @@
 import { clients } from '../data/media'
 
-// Client logos as an endless ticker. The PNGs have opaque white backgrounds:
-// grayscale + high contrast pushes the mark to ink, and multiply (on the animated
-// row, which is its own stacking context) drops the white against the page color,
-// so they sit on any field color.
+// Client logos as an endless ticker.
+//
+// The source PNGs are full-colour on opaque white. `logo-ink` flattens them to
+// ink: desaturate, then a steep ramp that only keeps near-white as white, so a
+// mid-tone brand colour (Booking Holdings' cyan, Fortive's green) lands on black
+// instead of washing out. Multiply on the moving row then drops the white,
+// leaving the mark sitting directly on whatever field colour is behind it.
+function InkFilter() {
+  return (
+    <svg aria-hidden className="absolute size-0" focusable="false">
+      <filter id="logo-ink" colorInterpolationFilters="sRGB">
+        <feColorMatrix type="saturate" values="0" />
+        <feComponentTransfer>
+          <feFuncR type="linear" slope="8" intercept="-6.6" />
+          <feFuncG type="linear" slope="8" intercept="-6.6" />
+          <feFuncB type="linear" slope="8" intercept="-6.6" />
+        </feComponentTransfer>
+      </filter>
+    </svg>
+  )
+}
+
 export default function ClientLogos() {
   const row = [...clients, ...clients] // two copies → seamless -50% loop
 
   return (
     <div className="group overflow-hidden" role="group" aria-label="Clients">
+      <InkFilter />
       <ul data-loop className="flex w-max animate-ticker items-center gap-12 mix-blend-multiply group-hover:[animation-play-state:paused]">
         {row.map((c, i) => (
           <li key={i} aria-hidden={i >= clients.length || undefined}>
@@ -18,7 +37,7 @@ export default function ClientLogos() {
               width="160"
               height="160"
               loading="lazy"
-              className="size-30 object-contain [filter:grayscale(1)_brightness(0.7)_contrast(10)]"
+              className="size-30 object-contain [filter:url(#logo-ink)]"
             />
           </li>
         ))}

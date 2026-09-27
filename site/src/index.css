@@ -97,6 +97,11 @@
     white-space: nowrap;
   }
   .pill--field { color: var(--ink); }
+  .pill--ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
   .pill__inner { display: inline-grid; overflow: hidden; }
   .pill__text { grid-area: 1 / 1; }
   .pill__clone { transform: translateX(calc(-110% - 2.1em)); }
