@@ -41,7 +41,7 @@ export default function AiProjects() {
               <h1 id="ai-title" className="text-display-1 font-black">AI Projects</h1>
             </div>
             <p className="max-w-[34ch] text-display-5 md:col-span-5">
-              Three prototypes I designed and built by working directly with AI tools, from first idea to a live, working demo.
+              Prototypes I design and build by working directly with AI tools, from first idea to a live, working demo. I add to this as I go.
             </p>
           </div>
           <div className="relative mt-16">

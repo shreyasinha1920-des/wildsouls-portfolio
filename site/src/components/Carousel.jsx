@@ -15,7 +15,9 @@ export default function Carousel({ items, label }) {
   const ref = useRef(null)
   const [edges, setEdges] = useState({ start: true, end: false })
   const allTall = items.every(isTall)
-  const h = allTall ? 'h-[440px] md:h-[520px]' : 'h-[260px] md:h-[380px]'
+  // One row height per strip; each slide's width then follows its own image, so a
+  // tall capture stays slim without the row collapsing and a wide one stays wide.
+  const row = allTall ? '[--row:420px] md:[--row:520px]' : '[--row:300px] md:[--row:400px]'
 
   // Arrows go dead at the ends rather than silently doing nothing.
   const readEdges = useCallback(() => {
@@ -73,17 +75,32 @@ export default function Carousel({ items, label }) {
           })}
         </div>
       </div>
-      <ul ref={ref} className="carousel" tabIndex={0} role="region" aria-label={`${label}, scrollable`}>
-        {items.map((item) => (
-          <li key={item.src}>
-            <figure>
+      <ul ref={ref} className={`carousel ${row}`} tabIndex={0} role="region" aria-label={`${label}, scrollable`}>
+        {items.map((item) => {
+          const caption = altText(item, label)
+          // A long scrolling capture is far taller than it is wide. Fitting the
+          // whole thing in the row would leave a sliver a few pixels across, so it
+          // gets a proper column width and is cropped from the top; the lightbox
+          // still opens the full image.
+          const isColumn = item.height > item.width * 2.4
+          return (
+            <li key={item.src} className="flex flex-col">
               {/* The caption names the screen, so the image itself stays silent
                   rather than having a screen reader read the same words twice. */}
-              <ZoomImage item={item} alt="" label={altText(item, label)} className={h} imgClassName="h-full w-auto" />
-              <figcaption className="mt-3 font-mono text-mono-sm uppercase">{altText(item, label)}</figcaption>
-            </figure>
-          </li>
-        ))}
+              <ZoomImage
+                item={item}
+                alt=""
+                label={caption}
+                className={`h-[var(--row)] max-w-[78vw] ${isColumn ? 'w-[220px] md:w-[260px]' : 'min-w-[180px]'}`}
+                imgClassName={isColumn ? 'h-full w-full object-cover object-top' : 'h-full w-auto'}
+              />
+              {/* width:0 keeps the caption out of the slide's intrinsic width, so it
+                  wraps under its own image instead of stretching the slide and
+                  running into the next caption. */}
+              <figcaption className="mt-4 w-0 min-w-full font-mono text-mono-sm uppercase">{caption}</figcaption>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )

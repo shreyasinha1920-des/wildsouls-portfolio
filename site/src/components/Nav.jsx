@@ -36,7 +36,7 @@ export default function Nav() {
   return (
     <header className="relative z-10">
       <p className="bg-ink px-5 py-3 text-center text-small text-paper [padding-top:max(15px,env(safe-area-inset-top))]">
-        Open to full-time Product Designer roles and select freelance projects.
+        Open to Product Design, UI/UX and Product Manager roles, plus select freelance projects.
       </p>
       <nav aria-label="Main" className="relative">
         <div className="container-wild grid grid-cols-[1fr_auto_1fr] items-center gap-5 pt-5 pb-5 md:pb-0">

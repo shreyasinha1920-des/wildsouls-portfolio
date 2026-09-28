@@ -17,8 +17,8 @@ export const workIntro = {
 
 export const aiCard = {
   title: 'AI Projects',
-  tags: ['3 Prototypes', 'AI-Built', 'Live Demos'],
-  summary: 'A few things I built by working directly with AI tools, end to end, from idea to live prototype.',
+  tags: ['Prototypes', 'AI-Built', 'Live Demos'],
+  summary: 'Things I build by working directly with AI tools, end to end, from idea to live prototype. An ongoing collection.',
 }
 
 export const testimonials = {

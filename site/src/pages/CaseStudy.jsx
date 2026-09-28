@@ -219,7 +219,10 @@ function LogoCards({ items, imagesFor }) {
         const logo = imagesFor(it.title).find((i) => i.role === 'logo')
         return (
           <li key={it.title} className="border-t border-ink pt-5">
-            <div className="flex items-center gap-4">
+            {/* Disc above the title, not beside it: in a three-column grid a name
+                like "Discoverability" has the whole card width instead of the
+                150px left over next to the disc, so it never breaks mid-word. */}
+            <div className="flex flex-col items-start gap-3">
               {/* The paper disc sits behind the logo only: most of these marks are
                   brand-colored, so they need a light backing to stay legible.
                   No logo (FontJoy has none on the source site) → a lettermark,
@@ -231,7 +234,7 @@ function LogoCards({ items, imagesFor }) {
                   <span aria-hidden className="font-mono text-display-5">{it.title.charAt(0)}</span>
                 )}
               </span>
-              <h3 className="text-display-5">{it.title}</h3>
+              <h3 className="min-w-0 text-display-5 hyphens-auto [overflow-wrap:break-word] [text-wrap:pretty]">{it.title}</h3>
             </div>
             <Prose blocks={it.blocks} className="mt-4 text-small" />
             {it.link && <a href={it.link.href} target="_blank" rel="noreferrer" className="link-sweep eyebrow mt-4">{it.link.label}</a>}
@@ -250,7 +253,7 @@ function TextCards({ items }) {
         return (
           <li key={it.title} className="border-b border-ink py-6">
             {index && <span className="mb-2 block font-mono text-mono-sm">{index}</span>}
-            <h3 className="text-display-5">{title}</h3>
+            <h3 className="text-display-5 hyphens-auto [overflow-wrap:break-word] [text-wrap:pretty]">{title}</h3>
             <Prose blocks={it.blocks} className="mt-3 text-small" />
           </li>
         )
@@ -320,7 +323,7 @@ function CardStrip({ section, title, imagesFor }) {
           return (
             <li key={it.title} className={tall ? 'w-[300px]' : 'w-[340px] md:w-[440px]'}>
               {img && <ZoomImage item={img} alt={altText(img, it.title)} className="bg-paper" imgClassName={`w-full object-cover object-top ${tall ? 'aspect-[4/5]' : 'aspect-[16/10]'}`} />}
-              <h3 className="mt-5 text-display-5">{it.title}</h3>
+              <h3 className="mt-5 text-display-5 hyphens-auto [overflow-wrap:break-word] [text-wrap:pretty]">{it.title}</h3>
               <Prose blocks={it.blocks} className="mt-2 text-small" />
               {it.link && <a href={it.link.href} target="_blank" rel="noreferrer" className="link-sweep eyebrow mt-3">{it.link.label}</a>}
             </li>
