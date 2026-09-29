@@ -82,7 +82,7 @@ export default function Home() {
             <p data-hero="body" className="mt-5 max-w-[60ch]">{hero.body}</p>
             <div data-hero="cta" className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
               <Pill href="#work">View my work</Pill>
-              <a href={contact.resume} target="_blank" rel="noreferrer" className="link-sweep link-sweep--on eyebrow">
+              <a href={contact.resume} download={contact.resumeName} className="link-sweep link-sweep--on eyebrow">
                 Download resume
               </a>
             </div>

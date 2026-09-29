@@ -90,7 +90,8 @@ export const getNextProject = (slug) => {
 
 export const contact = {
   email: 'hello@shreyasinha.co.in',
-  resume: 'https://drive.google.com/drive/folders/16VVJrjuPeVmmJaebISHGY5LBlZ1i8sXF?usp=drive_link',
+  resume: '/resume/shreya-sinha-resume.pdf',
+  resumeName: 'Shreya Sinha — Resume.pdf',
   linkedin: 'https://linkedin.com/in/shreyasinhadesigns/',
   behance: 'https://behance.net/shreyasinha1920',
 }

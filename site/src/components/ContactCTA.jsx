@@ -16,7 +16,7 @@ export default function ContactCTA({ field = 'tangerine' }) {
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
             <Pill href={`mailto:${contact.email}`}>Send email</Pill>
             <a href={contact.linkedin} target="_blank" rel="noreferrer" className="link-sweep eyebrow">LinkedIn</a>
-            <a href={contact.resume} target="_blank" rel="noreferrer" className="link-sweep eyebrow">Resume</a>
+            <a href={contact.resume} download={contact.resumeName} className="link-sweep eyebrow">Download resume</a>
           </div>
         </div>
         <Stamp text="Say hello · Say hello · Say hello · " size={200} className="hidden lg:grid">

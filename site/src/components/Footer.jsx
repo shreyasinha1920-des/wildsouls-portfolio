@@ -24,7 +24,7 @@ export default function Footer() {
         <ul className="flex flex-wrap gap-x-8 gap-y-3 md:justify-end md:self-end">
           <li><a href={contact.linkedin} target="_blank" rel="noreferrer" className="link-sweep eyebrow">LinkedIn</a></li>
           <li><a href={contact.behance} target="_blank" rel="noreferrer" className="link-sweep eyebrow">Behance</a></li>
-          <li><a href={contact.resume} target="_blank" rel="noreferrer" className="link-sweep eyebrow">Resume</a></li>
+          <li><a href={contact.resume} download={contact.resumeName} className="link-sweep eyebrow">Resume</a></li>
         </ul>
       </div>
 
