@@ -25,6 +25,13 @@ const prototypes = [
     body: "An interactive hero section built around a black hole. Move your cursor and it acts as a gravity source, bending a field of dust particles; scroll and the camera dollies into a raymarched black hole whose gravity gradually takes over from the cursor’s.",
     built: 'Built with Next.js, TypeScript and WebGPU, with a shader engine handling geodesic light-bending, an accretion disk with Doppler beaming and redshift, bloom, and adaptive quality tiers, plus a graceful static-starfield fallback for browsers without WebGPU.',
   },
+  {
+    title: 'Aurum — AI Portfolio Dashboard',
+    color: 'orchid',
+    href: 'https://aurum-ai-dashboard.vercel.app/',
+    body: "A stock portfolio dashboard where the AI isn’t a chat bubble in the corner but part of the page. A Siri-style orb glows behind your portfolio value; ask a question, typed or spoken, and it comes forward to answer with charts, while the cards it’s talking about light up behind it.",
+    built: 'Built with Claude Code in Next.js, TypeScript and GSAP, using SmoothUI’s Siri Orb and dither charts. Import your own holdings from a Zerodha export, CSV or PDF statement, read entirely in the browser, and every chart, stat and answer recalculates, in rupees against the Nifty 50 for Indian portfolios.',
+  },
 ]
 
 export default function AiProjects() {

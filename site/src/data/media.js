@@ -121,6 +121,18 @@ export const projectMedia = {
             "height": 748
           }
         ]
+      },
+      {
+        "title": "Aurum — AI Portfolio Dashboard",
+        "items": [
+          {
+            "src": "/images/projects/ai-projects/aurum.webp",
+            "alt": "Aurum answering “Why did my portfolio drop?” with a dithered chart of each holding’s contribution, the orb above and the holdings table lit behind",
+            "role": "image",
+            "width": 1600,
+            "height": 1000
+          }
+        ]
       }
     ]
   },
