@@ -157,8 +157,9 @@ function Section({ section, imagesFor, accent }) {
   const longBodies = items.length > 0 && items.reduce((n, it) => n + bodyLength(it), 0) / items.length > 220
 
   // Items that each carry a screenshot become full-width rows (long copy) or a card strip (short copy).
-  if (mostHaveBig && longBodies) return <FeatureRows section={section} title={title} imagesFor={imagesFor} accent={accent} />
-  if (mostHaveBig) return <CardStrip section={section} title={title} imagesFor={imagesFor} />
+  if (mostHaveBig && longBodies)
+    return <FeatureRows section={section} title={title} images={images} imagesFor={imagesFor} accent={accent} />
+  if (mostHaveBig) return <CardStrip section={section} title={title} images={images} imagesFor={imagesFor} />
 
   // Otherwise a stray item screenshot joins the section's own images, below the cards.
   const extraImages = [...images, ...bigImages.flat()]
@@ -188,7 +189,7 @@ function SectionTitle({ index, title, className = '', sticky = false }) {
   )
 }
 
-function SectionImages({ images, title }) {
+function SectionImages({ images, title, className = 'mt-10' }) {
   // One image keeps its own proportions; several share a grid on a paper mat.
   if (images.length === 1) {
     const [img] = images
@@ -196,7 +197,7 @@ function SectionImages({ images, title }) {
       <ZoomImage
         item={img}
         alt={altText(img, title)}
-        className="mt-10 w-fit"
+        className={`${className} w-fit`}
         imgClassName="max-h-[420px] w-auto max-w-full"
         data-parallax="0.12"
       />
@@ -204,7 +205,7 @@ function SectionImages({ images, title }) {
   }
   const cols = images.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'
   return (
-    <div className={`mt-10 grid gap-5 ${cols}`}>
+    <div className={`${className} grid gap-5 ${cols}`}>
       {images.map((img) => (
         <ZoomImage key={img.src} item={img} alt={altText(img, title)} className="bg-paper" imgClassName="max-h-[480px] w-full object-contain" />
       ))}
@@ -263,11 +264,13 @@ function TextCards({ items }) {
 }
 
 // Decisions and features with long copy: alternating text / screenshot rows.
-function FeatureRows({ section, title, imagesFor, accent }) {
+function FeatureRows({ section, title, images, imagesFor, accent }) {
   return (
     <section className="container-wild" aria-label={title}>
       <SectionTitle title={title} className="mb-12 max-w-[600px]" />
       <Prose blocks={section.blocks} className="mb-12" />
+      {/* The section's own screenshot, if it has one, before the per-item rows. */}
+      {images.length > 0 && <SectionImages images={images} title={title} className="mb-12" />}
       {section.items.length >= 3 && (
         <div className="hidden lg:block">
           <FeatureTabs items={section.items} imagesFor={imagesFor} accent={accent} splitIndex={splitIndex} />
@@ -309,12 +312,16 @@ function FeatureRows({ section, title, imagesFor, accent }) {
 }
 
 // Short-copy items with a screenshot each (variants, brands, features): one scrolling strip.
-function CardStrip({ section, title, imagesFor }) {
+function CardStrip({ section, title, images, imagesFor }) {
   return (
     <section aria-label={title}>
       <div className="container-wild mb-10 grid gap-6 lg:grid-cols-12">
         <SectionTitle title={title} className="lg:col-span-4" />
-        <Prose blocks={section.blocks} className="lg:col-span-8" />
+        <div className="lg:col-span-8">
+          <Prose blocks={section.blocks} />
+          {/* Section-level art sits above the strip of per-item cards. */}
+          {images.length > 0 && <SectionImages images={images} title={title} className="mt-8" />}
+        </div>
       </div>
       <ul className="carousel" tabIndex={0} role="region" aria-label={`${title}, scrollable`}>
         {section.items.map((it) => {

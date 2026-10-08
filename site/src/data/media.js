@@ -199,6 +199,18 @@ export const projectMedia = {
         ]
       },
       {
+        "title": "03 — Domain Health at a glance",
+        "items": [
+          {
+            "src": "/images/projects/earthly-lunar/domain-detail.png",
+            "alt": "Domain health: adherence score, checks passing and 30-day trends for a domain",
+            "role": "image",
+            "width": 1067,
+            "height": 600
+          }
+        ]
+      },
+      {
         "title": "04 — Drill-down without getting lost",
         "items": [
           {
@@ -1267,6 +1279,18 @@ export const projectMedia = {
             "role": "image",
             "width": 500,
             "height": 692
+          }
+        ]
+      },
+      {
+        "title": "Homepage",
+        "items": [
+          {
+            "src": "/images/projects/redcrackle/hero.webp",
+            "alt": "RedCrackle homepage: the hero statement over the purple gradient",
+            "role": "image",
+            "width": 1067,
+            "height": 600
           }
         ]
       },
