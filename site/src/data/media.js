@@ -155,7 +155,7 @@ export const projectMedia = {
         "items": [
           {
             "src": "/images/projects/earthly-lunar/manager.png",
-            "alt": "Manager",
+            "alt": "Manager view",
             "role": "image",
             "width": 1067,
             "height": 600
@@ -215,7 +215,7 @@ export const projectMedia = {
         "items": [
           {
             "src": "/images/projects/earthly-lunar/drill-down-view.webp",
-            "alt": "drill-down-view",
+            "alt": "Drill-down view",
             "role": "image",
             "width": 1067,
             "height": 600
@@ -226,8 +226,22 @@ export const projectMedia = {
         "title": "Key Screens",
         "items": [
           {
+            "src": "/images/projects/earthly-lunar/manager.png",
+            "alt": "Manager view",
+            "role": "image",
+            "width": 1067,
+            "height": 600
+          },
+          {
             "src": "/images/projects/earthly-lunar/domain-detail.png",
-            "alt": "Domain Detail",
+            "alt": "Domain health: adherence score, checks passing and 30-day trends for a domain",
+            "role": "image",
+            "width": 1067,
+            "height": 600
+          },
+          {
+            "src": "/images/projects/earthly-lunar/drill-down-view.webp",
+            "alt": "Drill-down view",
             "role": "image",
             "width": 1067,
             "height": 600
@@ -1322,6 +1336,34 @@ export const projectMedia = {
         "title": "Screen Highlights",
         "items": [
           {
+            "src": "/images/projects/redcrackle/wordmark.png",
+            "alt": "wordmark",
+            "role": "image",
+            "width": 500,
+            "height": 250
+          },
+          {
+            "src": "/images/projects/redcrackle/color-palette.png",
+            "alt": "color palette",
+            "role": "image",
+            "width": 500,
+            "height": 250
+          },
+          {
+            "src": "/images/projects/redcrackle/design-direction.webp",
+            "alt": "Design-direction",
+            "role": "image",
+            "width": 998,
+            "height": 972
+          },
+          {
+            "src": "/images/projects/redcrackle/service-page-design.webp",
+            "alt": "service page design",
+            "role": "image",
+            "width": 500,
+            "height": 692
+          },
+          {
             "src": "/images/projects/redcrackle/about-us-2.webp",
             "alt": "About Us",
             "role": "image",
@@ -1604,11 +1646,25 @@ export const projectMedia = {
         "title": "Key Screens",
         "items": [
           {
+            "src": "/images/projects/rootwords-project/tablet-view.webp",
+            "alt": "tablet-view",
+            "role": "image",
+            "width": 1067,
+            "height": 600
+          },
+          {
             "src": "/images/projects/rootwords-project/splash-screen.webp",
             "alt": "splash_screen",
             "role": "image",
             "width": 600,
             "height": 1080
+          },
+          {
+            "src": "/images/projects/rootwords-project/rootwords-branding.webp",
+            "alt": "rootwords-branding",
+            "role": "image",
+            "width": 1440,
+            "height": 1024
           },
           {
             "src": "/images/projects/rootwords-project/onboarding.webp",
@@ -1770,8 +1826,22 @@ export const projectMedia = {
         "title": "Screen Highlights",
         "items": [
           {
+            "src": "/images/projects/safal-ai/role-based-profiles.png",
+            "alt": "role-based profiles",
+            "role": "image",
+            "width": 754,
+            "height": 697
+          },
+          {
             "src": "/images/projects/safal-ai/past-performace-with-sidebar-open.png",
             "alt": "Past performace with sidebar open",
+            "role": "image",
+            "width": 1440,
+            "height": 992
+          },
+          {
+            "src": "/images/projects/safal-ai/conversational-ai.webp",
+            "alt": "conversational_ai",
             "role": "image",
             "width": 1440,
             "height": 992
@@ -1796,6 +1866,13 @@ export const projectMedia = {
             "role": "image",
             "width": 1440,
             "height": 994
+          },
+          {
+            "src": "/images/projects/safal-ai/knowledge-base.png",
+            "alt": "Knowledge-base",
+            "role": "image",
+            "width": 1440,
+            "height": 863
           },
           {
             "src": "/images/projects/safal-ai/knowledge-base-edit-modal.png",
@@ -1823,7 +1900,7 @@ export const projectMedia = {
     },
     "hero": {
       "src": "/images/projects/vitalsthailand/hero.webp",
-      "alt": "Vitals Thailand-image",
+      "alt": "Homepage, desktop and mobile",
       "role": "image",
       "width": 1072,
       "height": 601
@@ -1906,7 +1983,7 @@ export const projectMedia = {
         "items": [
           {
             "src": "/images/projects/vitalsthailand/influencers-vitals-thailand.webp",
-            "alt": "influencers-Vitals-Thailand",
+            "alt": "Expert pages",
             "role": "image",
             "width": 1067,
             "height": 600
@@ -1918,7 +1995,7 @@ export const projectMedia = {
         "items": [
           {
             "src": "/images/projects/vitalsthailand/docvitals-vitals-thailand.webp",
-            "alt": "docvitals-Vitals-Thailand",
+            "alt": "Doc Vitals AI",
             "role": "image",
             "width": 1067,
             "height": 600
@@ -1942,7 +2019,7 @@ export const projectMedia = {
         "items": [
           {
             "src": "/images/projects/vitalsthailand/cms-vitals-thailand.png",
-            "alt": "cms-Vitals-Thailand",
+            "alt": "The CMS",
             "role": "image",
             "width": 1067,
             "height": 600
@@ -1974,22 +2051,43 @@ export const projectMedia = {
         "title": "Screen Highlights",
         "items": [
           {
+            "src": "/images/projects/vitalsthailand/hero.webp",
+            "alt": "Homepage, desktop and mobile",
+            "role": "image",
+            "width": 1072,
+            "height": 601
+          },
+          {
             "src": "/images/projects/vitalsthailand/vitals.webp",
-            "alt": "Vitals",
+            "alt": "Product listing with filters",
             "role": "image",
             "width": 800,
             "height": 600
           },
           {
             "src": "/images/projects/vitalsthailand/pdp.webp",
-            "alt": "pdp",
+            "alt": "Product detail page",
             "role": "image",
             "width": 800,
             "height": 600
           },
           {
+            "src": "/images/projects/vitalsthailand/docvitals-vitals-thailand.webp",
+            "alt": "Doc Vitals AI",
+            "role": "image",
+            "width": 1067,
+            "height": 600
+          },
+          {
+            "src": "/images/projects/vitalsthailand/influencers-vitals-thailand.webp",
+            "alt": "Expert pages",
+            "role": "image",
+            "width": 1067,
+            "height": 600
+          },
+          {
             "src": "/images/projects/vitalsthailand/expert-page.webp",
-            "alt": "expert page",
+            "alt": "Expert profile detail",
             "role": "image",
             "width": 800,
             "height": 600
@@ -2013,6 +2111,13 @@ export const projectMedia = {
             "alt": "Network error",
             "role": "image",
             "width": 800,
+            "height": 600
+          },
+          {
+            "src": "/images/projects/vitalsthailand/cms-vitals-thailand.png",
+            "alt": "The CMS",
+            "role": "image",
+            "width": 1067,
             "height": 600
           }
         ]

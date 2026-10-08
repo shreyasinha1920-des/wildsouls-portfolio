@@ -14,10 +14,13 @@ const prefersReducedMotion = () => window.matchMedia?.('(prefers-reduced-motion:
 export default function Carousel({ items, label }) {
   const ref = useRef(null)
   const [edges, setEdges] = useState({ start: true, end: false })
-  const allTall = items.every(isTall)
+  // The row height follows the majority shape, not every slide: a recap strip of
+  // phone screens keeps its tall row even when a tablet shot or a branding board
+  // is mixed in, instead of shrinking all seven phones to suit two outliers.
+  const mostlyTall = items.filter(isTall).length >= Math.ceil(items.length * 0.6)
   // One row height per strip; each slide's width then follows its own image, so a
   // tall capture stays slim without the row collapsing and a wide one stays wide.
-  const row = allTall ? '[--row:420px] md:[--row:520px]' : '[--row:300px] md:[--row:400px]'
+  const row = mostlyTall ? '[--row:420px] md:[--row:520px]' : '[--row:300px] md:[--row:400px]'
 
   // Arrows go dead at the ends rather than silently doing nothing.
   const readEdges = useCallback(() => {
