@@ -50,6 +50,7 @@ function CaseStudyBody({ project, cs }) {
 
       <Field field={project.color} className="pb-section">
         <div className="flex flex-col gap-20">
+          {cs.glance && <Glance glance={cs.glance} />}
           {body.map((s) =>
             GALLERY.test(s.title) ? (
               <GallerySection key={s.title} section={s} images={imagesFor(s.title)} />
@@ -57,10 +58,11 @@ function CaseStudyBody({ project, cs }) {
               <Section key={s.title} section={s} imagesFor={imagesFor} accent={accent} />
             ),
           )}
+          {cs.tradeoffs?.length > 0 && <TradeOffs tradeoffs={cs.tradeoffs} />}
         </div>
       </Field>
 
-      {outcome && <Outcome section={outcome} field={accent} />}
+      {outcome && <Outcome section={outcome} field={accent} results={cs.results} />}
       <NextProject next={next} />
     </article>
   )
@@ -141,6 +143,61 @@ function Header({ project, cs, hero, accent }) {
         <p className="mt-6 border-t border-ink pt-5 text-small">{cs.meta}</p>
       </div>
     </Field>
+  )
+}
+
+// The spine of every case study, before the detail: what was wrong, what I did
+// about it, what changed. Three ruled columns so it reads in one pass.
+function Glance({ glance }) {
+  const columns = [
+    ['The problem', glance.problem],
+    ['The approach', glance.approach],
+    ['The result', glance.result],
+  ]
+  return (
+    <section className="container-wild" aria-label="At a glance">
+      <dl data-reveal-group="0.08" className="grid border-t border-ink lg:grid-cols-3">
+        {columns.map(([label, text], i) => (
+          <div
+            key={label}
+            className={`border-b border-ink py-8 lg:border-b-0 lg:pr-8 ${i ? 'lg:border-l lg:pl-8' : ''}`}
+          >
+            <dt className="eyebrow mb-4 flex items-baseline gap-3">
+              <span aria-hidden>{String(i + 1).padStart(2, '0')}</span>
+              {label}
+            </dt>
+            {/* The result carries the number, so it gets the weight. */}
+            <dd className={i === 2 ? 'text-display-5' : 'max-w-[46ch] text-small'}>{text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  )
+}
+
+// What each decision cost. A decision with no downside wasn't a decision.
+function TradeOffs({ tradeoffs }) {
+  return (
+    <section className="container-wild grid gap-8 lg:grid-cols-12 lg:gap-6" aria-label="Trade-offs">
+      <SectionTitle title="Trade-offs" className="lg:col-span-4" sticky />
+      <ol data-reveal-group="0.07" className="border-t border-ink lg:col-span-8">
+        {tradeoffs.map((t, i) => (
+          <li key={t.chose} className="border-b border-ink py-8">
+            <span className="mb-3 block font-mono text-mono-sm">{String(i + 1).padStart(2, '0')}</span>
+            <h3 className="text-display-5 hyphens-auto [overflow-wrap:break-word] [text-wrap:pretty]">{t.chose}</h3>
+            <p className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-small">
+              <span className="eyebrow">Over</span>
+              <span className="max-w-[52ch]">{t.over}</span>
+            </p>
+            <p className="mt-5 max-w-[60ch] text-small">{t.why}</p>
+            <p className="mt-5 max-w-[60ch] border-l border-ink pl-5 text-small">
+              <span className="eyebrow mr-3">What it cost</span>
+              {t.cost}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </section>
   )
 }
 
@@ -367,12 +424,26 @@ function Links({ links }) {
   )
 }
 
-function Outcome({ section, field }) {
+function Outcome({ section, field, results }) {
   return (
     <Field field={field} className="py-section" aria-labelledby="outcome-title">
       <div className="container-wild grid gap-8 lg:grid-cols-12 lg:gap-6">
         <h2 id="outcome-title" className="text-display-2 font-black lg:col-span-4">Outcome</h2>
         <div className="lg:col-span-8">
+          {results?.length > 0 && (
+            <dl data-reveal-group="0.08" className="mb-12 grid gap-x-6 border-t border-ink sm:grid-cols-2">
+              {results.map((r) => (
+                <div key={r.label} className="flex flex-col-reverse border-b border-ink py-6">
+                  <dt className="mt-2 font-mono text-mono-sm uppercase">{r.label}</dt>
+                  <dd className="flex items-baseline gap-3">
+                    {/* Before → after, where there is a before worth showing. */}
+                    {r.from && <span className="font-mono text-mono-sm">{r.from} →</span>}
+                    <span data-count className="text-display-2 font-black tabular-nums">{r.value}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          )}
           {section.blocks.map((b, i) =>
             b.list ? (
               <ul key={i} data-reveal-group="0.12" className="border-t border-ink">

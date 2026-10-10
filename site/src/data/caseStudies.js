@@ -142,6 +142,41 @@ export const caseStudies = {
           }
         ]
       }
+    ],
+    "glance": {
+      "problem": "One engineering guardrails platform had to serve two audiences at once — leaders scanning the health of hundreds of services, and developers who need line-level feedback on their own pull requests.",
+      "approach": "Two deliberately different views over the same data: a management summary built on adherence scores and traffic-light domain health, and a developer breakdown with drill-down — with every service state specified alongside engineers before build started.",
+      "result": "One product that neither audience has to work around."
+    },
+    "results": [
+      {
+        "value": "10 sec",
+        "label": "To scan 12 domains and know which need attention"
+      },
+      {
+        "value": "100%",
+        "label": "Service states specified with engineers before build"
+      }
+    ],
+    "tradeoffs": [
+      {
+        "chose": "Two distinct views of the same data",
+        "over": "A single dashboard with enough on it for both audiences",
+        "why": "The same number means something different to a leader making a strategic call and a developer fixing a violation. One view would have been a compromise that served neither well.",
+        "cost": "Two surfaces to design, build and keep consistent as the data model changes."
+      },
+      {
+        "chose": "A single adherence score per domain as the primary language",
+        "over": "Surfacing the underlying compliance data directly",
+        "why": "A leader can act on a score without first learning the model that produced it.",
+        "cost": "A score hides its own inputs. The drill-down has to carry that weight, and it has to be one click away at all times."
+      },
+      {
+        "chose": "Specifying every service state with engineers before build started",
+        "over": "Designing the primary path and resolving the rest during QA",
+        "why": "On a dashboard, an unhandled state is indistinguishable from a healthy one — which is the most expensive kind of bug in an observability product.",
+        "cost": "A slower start before any screen looked finished."
+      }
     ]
   },
   "ebb": {
@@ -595,6 +630,38 @@ export const caseStudies = {
           }
         ]
       }
+    ],
+    "glance": {
+      "problem": "Every budgeting tool assumes a salary. Revolut assumes you are paid on the 1st, QuickBooks treats you like a ledger, Wave is free but cold. A freelancer earning ₹1.5 lakh one month and ₹30,000 the next has nothing that fits.",
+      "approach": "A ten-day AI-augmented sprint across 8 tools — research, sitemap, wireframes, palette, type and microcopy all drafted by AI, then edited by hand — built around one hero number: safe to spend today.",
+      "result": "A complete app design and working prototype in 10 days."
+    },
+    "results": [
+      {
+        "value": "10 days",
+        "from": "6 wks",
+        "label": "Brief to clickable prototype, with AI against without"
+      }
+    ],
+    "tradeoffs": [
+      {
+        "chose": "Treating AI output as a starting point to react to",
+        "over": "Treating AI output as the deliverable",
+        "why": "Reacting is faster than originating — but no tool understood that the safe-to-spend number had to feel reassuring rather than alarming, and that was the whole product.",
+        "cost": "Every generated artefact needed a human editing pass. The speed came from editing, never from accepting."
+      },
+      {
+        "chose": "Cutting the Reports section the AI proposed",
+        "over": "Keeping the generated sitemap intact",
+        "why": "Ebb is not an accounting tool. Everything a freelancer needs in order to feel in control belongs on the dashboard, not buried a level down.",
+        "cost": "A power user loses the place to dig into their own history."
+      },
+      {
+        "chose": "Ten days and a working prototype",
+        "over": "Six weeks and a production-ready specification",
+        "why": "The point of the exercise was to map where AI genuinely adds value in a real design process, which needs a finished artefact rather than a perfect one.",
+        "cost": "It stays a concept. No users, no shipped metrics, no contact with reality."
+      }
     ]
   },
   "eightfold-career-pages": {
@@ -768,6 +835,31 @@ export const caseStudies = {
           }
         ]
       }
+    ],
+    "glance": {
+      "problem": "Five global enterprises each needed a career page that felt native to their own brand — all built inside one platform’s fixed component structure, delivered at the same time.",
+      "approach": "Brand immersion first, platform constraints second, then translation: each company’s typography, colour and hierarchy mapped onto Eightfold’s components and carried through job listings and talent community flows.",
+      "result": "Five live career pages, hiring today."
+    },
+    "tradeoffs": [
+      {
+        "chose": "Designing inside Eightfold’s component structure",
+        "over": "Designing what each brand deserved and asking engineering to extend the platform",
+        "why": "The constraint was the brief. These pages had to ship on the platform the clients already ran, on the clients’ timelines.",
+        "cost": "Brand details that could not survive the component set were dropped rather than fought for."
+      },
+      {
+        "chose": "One shared system stretched across five brands",
+        "over": "Five independent designs, each solved on its own terms",
+        "why": "A small team delivering five clients concurrently can hold one system in its head, not five.",
+        "cost": "Each brand gets real fidelity within a shared skeleton rather than a layout built only for it."
+      },
+      {
+        "chose": "Designing the secondary pages as well",
+        "over": "The career homepage alone, which is what gets reviewed",
+        "why": "Candidates form their judgement on the job detail page, long after the hero has done its work.",
+        "cost": "Scope multiplied by five, on concurrent timelines."
+      }
     ]
   },
   "herstories": {
@@ -815,7 +907,7 @@ export const caseStudies = {
         ]
       },
       {
-        "title": "The Product",
+        "title": "The Competition",
         "items": [
           {
             "title": "Webtoon",
@@ -852,7 +944,7 @@ export const caseStudies = {
         ],
         "blocks": [
           {
-            "text": "Safal AI is built around three core AI tools, each addressing a specific knowledge problem the firm faces daily:"
+            "text": "Four apps own this space, and each one leaves the same gap open:"
           }
         ]
       },
@@ -997,6 +1089,31 @@ export const caseStudies = {
             "text": "The project is paused. The direction is solid."
           }
         ]
+      }
+    ],
+    "glance": {
+      "problem": "Wattpad, Webtoon, Tapas and AnyBooks all leave the reader outside the story — a passive consumer with no identity inside the app and no reason to come back to that app specifically.",
+      "approach": "An avatar the reader builds and owns, appearing inside their reading experience, a coin economy that rewards rather than paywalls, swipe-based discovery and a community layer — pressure-tested across five homepage variants.",
+      "result": "A defined direction in two weeks. Paused before production."
+    },
+    "tradeoffs": [
+      {
+        "chose": "An avatar the reader builds and owns",
+        "over": "A conventional profile with a photo and a display name",
+        "why": "Emotional ownership is the whole proposition. You are not reading the story, you are in it — and that is the one thing no competitor offered.",
+        "cost": "A character system, three starting styles and a wardrobe all have to exist before a single story can be read."
+      },
+      {
+        "chose": "Coins earned through reading activity",
+        "over": "Episode paywalls, the model the category runs on",
+        "why": "The same unlock reads as a reward when you earned it and as a toll when you did not.",
+        "cost": "Slower monetisation, and a currency that has to stay balanced as the library grows."
+      },
+      {
+        "chose": "Five homepage variants rather than one recommendation",
+        "over": "Converging early and spending the time on depth elsewhere",
+        "why": "The real tension was personalisation against discovery, and it needed to be seen side by side rather than argued about.",
+        "cost": "A significant share of a two-week engagement spent on a single screen."
       }
     ]
   },
@@ -1162,12 +1279,44 @@ export const caseStudies = {
         "title": "Outcome",
         "blocks": [
           {
-            "text": "The web experience was built, tested by the Analytics Developer, and validated. Search success rate increased from 48% to 72%, replacing a download-and-guess workflow with direct keyword landing on the exact content needed — proving that developers engaged meaningfully with the structured web content versus the original PDF format."
+            "text": "The web experience was built, tested by the Analytics Developer, and validated — replacing a download-and-guess workflow with developers landing directly on the exact content they needed."
           },
           {
             "text": "Project paused post-Salesforce acquisition."
           }
         ]
+      }
+    ],
+    "glance": {
+      "problem": "Years of MuleSoft’s technical writing sat inside PDFs — invisible to search engines, punishing to read end to end, and impossible to measure.",
+      "approach": "A three-column reading experience native to MuleSoft’s design language: a full navigation tree, one page per section with read times, and a context rail carrying related content and an Ask an Expert CTA — plus a progressive-profiling form gate and an analytics layer.",
+      "result": "Search success rose from 48% to 72%."
+    },
+    "results": [
+      {
+        "value": "72%",
+        "from": "48%",
+        "label": "Search success rate"
+      }
+    ],
+    "tradeoffs": [
+      {
+        "chose": "Rebuilding the information architecture around observed behaviour",
+        "over": "The navigation structure everyone had already signed off",
+        "why": "Usability testing invalidated the original assumption outright — people did not move through the content the way the plan assumed they would.",
+        "cost": "Rework late in the project, and a harder conversation than quietly shipping the agreed structure would have been."
+      },
+      {
+        "chose": "A form gate that meets new readers on whichever page they land on",
+        "over": "Leaving the content ungated for a cleaner read",
+        "why": "Lead capture was an explicit goal of the project, and progressive profiling meant a returning reader was never asked for the same thing twice.",
+        "cost": "Friction at the entrance of a reading experience. The gate had to be designed as a doorway rather than a wall, and some readers still bounce at it."
+      },
+      {
+        "chose": "Keeping the original PDF downloadable",
+        "over": "Web-only, which would have forced everyone through the tracked experience",
+        "why": "Some developers genuinely prefer the file, and removing it would have been a downgrade disguised as a metric.",
+        "cost": "A share of readers leave the measurable experience by choice."
       }
     ]
   },
@@ -1328,6 +1477,31 @@ export const caseStudies = {
             "text": "Completed in approximately four months alongside client project work."
           }
         ]
+      }
+    ],
+    "glance": {
+      "problem": "An agency founded in 2012 and pitching Fortune 500 clients had outgrown its identity — and two stakeholders wanted opposite things: bold, bright and loud against minimal, clean and quiet.",
+      "approach": "Popping colours, minimal design. The energy of the first vision applied with the restraint of the second — wordmark, palette and system, then a full website across seven service areas.",
+      "result": "Live at redcrackle.com, pitching Fortune 500 clients daily."
+    },
+    "tradeoffs": [
+      {
+        "chose": "Bold colour applied with restraint",
+        "over": "Committing to either stakeholder’s stated direction",
+        "why": "Both were right for different reasons. The brand had to be memorable to a startup and credible to a Fortune 500 procurement team on the same page.",
+        "cost": "Neither stakeholder got the thing they originally asked for, and the position had to be argued from what each of them actually wanted underneath it."
+      },
+      {
+        "chose": "A typographic wordmark",
+        "over": "A logo mark or icon",
+        "why": "The name should do the work for a company whose reputation rests on what it delivers rather than on a symbol.",
+        "cost": "No mark to fall back on where type will not fit — favicons, app icons, small placements."
+      },
+      {
+        "chose": "One consistent structure across all seven service pages",
+        "over": "A bespoke page per service",
+        "why": "A visitor comparing two services should be comparing the services, not relearning the page.",
+        "cost": "Services with genuinely different stories have to tell them in the same shape."
       }
     ]
   },
@@ -1490,15 +1664,48 @@ export const caseStudies = {
         "blocks": [
           {
             "list": [
-              "RocketPages is live.",
-              "30+ small businesses and community welfare organizations internationally are building their websites on a platform I designed from scratch — brand, UX, editor, components, and all.",
-              "76% component reuse rate across all product and site builds on the platform."
+              "RocketPages is live, and this portfolio is built on it."
             ]
           },
           {
             "text": "The most meaningful outcome isn’t a number. It’s that people who previously couldn’t have a website now do."
           }
         ]
+      }
+    ],
+    "glance": {
+      "problem": "Wix, Squarespace and Weblium are powerful enough that most small business owners end up hiring a designer to use them — which defeats the point of a no-code builder.",
+      "approach": "One editing pattern — Content, Style, Layout — repeated on every component, a Global Theme that sets brand choices once, and curated options in place of infinite ones, across a library of 25+ components.",
+      "result": "30+ businesses building on it, at a 76% component reuse rate."
+    },
+    "results": [
+      {
+        "value": "30+",
+        "label": "Small businesses and community organisations building on it"
+      },
+      {
+        "value": "76%",
+        "label": "Component reuse across product and site builds"
+      }
+    ],
+    "tradeoffs": [
+      {
+        "chose": "Curated choices — a palette library, pre-tested font pairings, button presets",
+        "over": "Full control over every property, the way established builders offer it",
+        "why": "The goal was fewer decisions, not fewer features. A small business owner needs options that cannot produce an ugly result.",
+        "cost": "A designer using RocketPages hits the ceiling quickly. That user was never the one being served."
+      },
+      {
+        "chose": "The same Content → Style → Layout pattern on every single component",
+        "over": "Bespoke controls tuned to what each component actually needs",
+        "why": "Learn the pattern once on the hero section and you already know how to edit the gallery, the pricing table and the contact form.",
+        "cost": "A few components carry a mode that barely applies to them, kept for the sake of the pattern holding everywhere."
+      },
+      {
+        "chose": "A fixed component library with locked structure",
+        "over": "A free-form canvas users can arrange however they like",
+        "why": "Constraint is what keeps a non-designer’s site looking credible, and it is what produced a 76% reuse rate across builds.",
+        "cost": "Any layout outside the library needs engineering rather than editing."
       }
     ]
   },
@@ -1621,7 +1828,7 @@ export const caseStudies = {
         "title": "Outcome",
         "blocks": [
           {
-            "text": "RootWords launched on the App Store and Google Play and is live and active. DAU/MAU ratio was 24%, indicating strong repeat engagement for a gamified learning app."
+            "text": "RootWords launched on the App Store and Google Play and is live and active."
           },
           {
             "text": "The app serves middle school students, high school students, SAT/ACT/IELTS test-takers, college students, healthcare students, and ESL learners — a remarkably broad audience united by one thing: they all need to decode unfamiliar words quickly and confidently."
@@ -1630,6 +1837,37 @@ export const caseStudies = {
             "text": "Designed end-to-end in one month — brand identity, four game modes, onboarding, tablet view, and complete mobile app."
           }
         ]
+      }
+    ],
+    "glance": {
+      "problem": "Vocabulary learning is dry, and bolting a points system onto flashcards does not fix that. The app had to feel like play from the first screen — for a 14-year-old on SATs and a medical student at the same time.",
+      "approach": "A slot-machine mechanic that combines roots, prefixes and suffixes, four modes running from guided Learn to open-ended Nonsense, a coin reward economy, and a brand that reads smart without reading like a textbook.",
+      "result": "24% DAU/MAU — strong repeat engagement for a learning app."
+    },
+    "results": [
+      {
+        "value": "24%",
+        "label": "DAU/MAU ratio — repeat engagement"
+      }
+    ],
+    "tradeoffs": [
+      {
+        "chose": "A slot-machine spin as the core loop",
+        "over": "A conventional flashcard drill with progress tracking",
+        "why": "The randomness creates anticipation and the combining mechanic teaches pattern recognition, which is the actual skill being learned.",
+        "cost": "A mechanic borrowed from gambling, in a product used by school students. It had to read unmistakably as a word game, which constrained the visual language."
+      },
+      {
+        "chose": "Four distinct modes",
+        "over": "One mode taken further",
+        "why": "Learning, being tested, competing and applying are different needs, and Nonsense is the only one that forces application rather than recall.",
+        "cost": "Four experiences to design, balance and maintain inside a one-month build."
+      },
+      {
+        "chose": "One brand for a 14-year-old and a medical student",
+        "over": "Splitting into two products or two visual identities",
+        "why": "Both audiences need exactly the same thing — to decode an unfamiliar word quickly and with confidence.",
+        "cost": "The identity has to sit between playful and credible and cannot commit fully to either."
       }
     ]
   },
@@ -1773,12 +2011,43 @@ export const caseStudies = {
         "blocks": [
           {
             "list": [
-              "Safal’s team can now answer in seconds questions that previously required hours of manual document search-48% less time spent searching and validating opportunities, expertise, and contract sources.",
-              "Designed for two user roles across three AI-powered tools — with full authentication, query history, source references, and knowledge base management.",
+              "Safal’s team can now answer in seconds questions that previously required hours of manual document search.",
+              "Designed for three user roles across three AI-powered tools — with full authentication, query history, source references, and knowledge base management.",
               "A complete internal AI platform that transforms years of institutional knowledge into an instantly searchable, conversational interface."
             ]
           }
         ]
+      }
+    ],
+    "glance": {
+      "problem": "A US government contracting firm held years of contract data, past performance and employee expertise that could only be found by digging through documents — or by already knowing who to ask.",
+      "approach": "Three natural-language tools over one curated knowledge base, with source references on every answer, a human reviewing every contract decision, role-based access for admins, editors and viewers, and every auth and error state specified.",
+      "result": "48% less time spent searching and validating."
+    },
+    "results": [
+      {
+        "value": "48%",
+        "label": "Less time spent searching and validating opportunities"
+      }
+    ],
+    "tradeoffs": [
+      {
+        "chose": "Source attribution on every answer and a human in the loop on every contract decision",
+        "over": "Letting the AI answer outright and trusting the model",
+        "why": "In government contracting a wrong answer is a compliance exposure, and an answer nobody can trace back to a document is worth nothing regardless of whether it happens to be right.",
+        "cost": "A verification step inside every workflow. The time saved had to come from finding the document fast, not from skipping the check."
+      },
+      {
+        "chose": "A Knowledge Base that admins curate",
+        "over": "Pointing the AI at everything the firm has ever produced",
+        "why": "The team needed to control what the AI knows so responses stay accurate and current.",
+        "cost": "Someone owns that maintenance forever, and the AI is only ever as complete as the curation behind it."
+      },
+      {
+        "chose": "A different interface per role",
+        "over": "One interface with controls greyed out for people who lack access",
+        "why": "Disabled controls advertise what you cannot do. Removing them entirely leaves no ambiguity about the job in front of you.",
+        "cost": "Three variants of most screens to design and keep in sync."
       }
     ]
   },
@@ -1962,11 +2231,47 @@ export const caseStudies = {
           {
             "list": [
               "The redesign transformed Vitals from a single-page infinite scroll into a complete e-commerce ecosystem — covering product discovery, trust architecture, personalization, AI-powered guidance, and post-purchase account management.",
-              "Conversion rate increased from 3% to 21% after the redesign went live.",
-              "Questionnaire completion rate increased from 47% to 65%. 36% of users who completed the questionnaire shopped from the recommendation they received."
+              "36% of users who completed the health questionnaire went on to shop from the recommendation they received."
             ]
           }
         ]
+      }
+    ],
+    "glance": {
+      "problem": "A Bangkok supplement retailer sold through an infinite scroll with no filters, no trust signals and no accounts. In a category where people are putting things in their bodies, the site read as untrustworthy.",
+      "approach": "Rebuilt the platform across 14 page types, web and mobile — trust signals at every decision point, a real filter and discovery system, expert-led recommendations, an AI health advisor gated behind a questionnaire, and a CMS so the team could run it without me.",
+      "result": "Conversion rose from 3% to 21% after launch."
+    },
+    "results": [
+      {
+        "value": "21%",
+        "from": "3%",
+        "label": "Conversion rate after launch"
+      },
+      {
+        "value": "65%",
+        "from": "47%",
+        "label": "Health questionnaire completion"
+      }
+    ],
+    "tradeoffs": [
+      {
+        "chose": "A 10-step health questionnaire before Doc Vitals answers anything",
+        "over": "Instant AI answers the moment the chat opens, as briefed",
+        "why": "Health guidance without context is guesswork, and the wrong supplement recommendation is a safety problem rather than a UX one. The questionnaire builds a profile that makes every later answer sharper.",
+        "cost": "A slower first answer and an upfront ask most products would skip. Completion climbed from 47% to 65% once the flow earned it."
+      },
+      {
+        "chose": "A structured catalogue — categories, filters, price in Baht, sort",
+        "over": "The infinite scroll the business already had",
+        "why": "Nobody could find a product they already knew they wanted. Discovery had to be navigable before any amount of trust-building would convert.",
+        "cost": "The full inventory had to be categorised and tagged before launch, and the team took on that work."
+      },
+      {
+        "chose": "Designing every failure state — low stock, sold out, payment failure, network error",
+        "over": "Shipping the happy path and handling states later",
+        "why": "Trust is built or lost at the moment something goes wrong, which is exactly where this brand was weakest.",
+        "cost": "A meaningful share of the screen count went to states most users will never see."
       }
     ]
   }
