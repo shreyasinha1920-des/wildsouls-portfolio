@@ -53,7 +53,8 @@ export default function WorkIndex({ items }) {
             yTo(e.clientY)
           }
 
-          show.current = (item, atRect) => {
+          show.current = (item, atRect, point) => {
+            const wasHidden = active.current === null
             active.current = item
             if (media.current) {
               media.current.src = item.image.src
@@ -62,6 +63,16 @@ export default function WorkIndex({ items }) {
             if (atRect) {
               // Keyboard: park it beside the row, no trailing.
               gsap.set(card, { x: Math.min(atRect.right - 200, window.innerWidth - 220), y: atRect.top + atRect.height / 2, rotation: 0 })
+            } else if (point && wasHidden) {
+              // Mouse, first contact: put the card under the cursor before it
+              // fades in. Without this it fades in at whatever x/y it was last
+              // left at — the top-left corner on the very first hover — and
+              // then slides across the page to catch up.
+              gsap.set(card, { x: point.x + 190, y: point.y, rotation: 0 })
+              // Seed the velocity sampler too, or the first move reads a jump
+              // from the stale position and banks the card hard.
+              lastX = point.x
+              lastT = performance.now()
             }
             gsap.to(card, { autoAlpha: 1, scale: 1, duration: 0.3, ease: 'power3.out', overwrite: 'auto' })
           }
@@ -85,7 +96,7 @@ export default function WorkIndex({ items }) {
             <Link
               to={`/${p.slug}`}
               viewTransition
-              onPointerEnter={(e) => e.pointerType === 'mouse' && show.current(p)}
+              onPointerEnter={(e) => e.pointerType === 'mouse' && show.current(p, null, { x: e.clientX, y: e.clientY })}
               onFocus={(e) => show.current(p, e.currentTarget.getBoundingClientRect())}
               onBlur={() => hide.current()}
               className="group grid gap-x-6 gap-y-3 py-6 md:grid-cols-12 md:items-baseline"
