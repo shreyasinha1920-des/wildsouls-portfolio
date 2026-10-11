@@ -99,14 +99,14 @@ export const projectMedia = {
         ]
       },
       {
-        "title": "Touch Target Farm",
+        "title": "Alice, Lost — An Interactive 404",
         "items": [
           {
-            "src": "/images/projects/ai-projects/touch-target-farm.webp",
-            "alt": "Touch Target Farm: the Jungle Greenhouse field checking 48dp spacing",
+            "src": "/images/projects/ai-projects/alice-lost.webp",
+            "alt": "Alice, Lost: the pack of cards flies up at Alice across both pages of the open storybook, printed in pink, blue and yellow riso inks",
             "role": "image",
             "width": 1600,
-            "height": 1061
+            "height": 1000
           }
         ]
       },
@@ -131,6 +131,18 @@ export const projectMedia = {
             "role": "image",
             "width": 1600,
             "height": 1000
+          }
+        ]
+      },
+      {
+        "title": "Safal AI",
+        "items": [
+          {
+            "src": "/images/projects/safal-ai/conversational-ai.webp",
+            "alt": "Safal AI's Past Performances tool answering “Summarize five contracts where technical assistance is a specific task”, with the contracts and references below",
+            "role": "image",
+            "width": 1440,
+            "height": 992
           }
         ]
       }

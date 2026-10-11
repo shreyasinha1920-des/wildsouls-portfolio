@@ -12,11 +12,11 @@ const prototypes = [
     built: 'Built in 10 days using 8 AI tools end to end: Claude for research; Uizard, Khroma, FontJoy, Midjourney and Relume for design; Cursor and GitHub Copilot for the plain HTML/CSS/JS build. Documented as a day-by-day build-in-public series on LinkedIn.',
   },
   {
-    title: 'Touch Target Farm',
-    color: 'butter',
-    href: 'https://shreyasinha1920-des.github.io/8bitcn_designer_calculator/',
-    body: "A touch target size and spacing accessibility calculator, reimagined as a retro farming game. Two fields to walk into (Sunny Orchard for iOS’s 44pt minimum, Jungle Greenhouse for Android’s 48dp minimum), so instead of reading a rule, you plant and see whether a target passes.",
-    built: 'Built with Claude Code using the 8bitcn/ui component library for the UI chrome and pixel art sprites for the farm scene. Assets from Sprout Lands, by Cup Nooble.',
+    title: 'Alice, Lost — An Interactive 404',
+    color: 'blush',
+    href: 'https://alice-lost.vercel.app/',
+    body: 'A 404 page told as a 23-page picture book. Alice’s Adventures in Wonderland, set in John Tenniel’s 1865 engravings and printed live in riso inks: turn the pages, drink the potion and the whole book shrinks, eat the cake and Alice grows right out of it, trace a golden thread to a door in a tree. However lost you got, the story ends by taking you somewhere real on this site.',
+    built: 'Built with Claude Code in Vite and TypeScript with no framework: a WebGL riso press (halftone screens, overprint, misregistration) over a hand-made canvas brush library, GSAP for the page turns, Web Audio for a generative music box, and Tenniel’s public-domain plates cut out and hand-coloured in code.',
   },
   {
     title: 'Gravity Well — Black Hole Mission Hero',
@@ -31,6 +31,14 @@ const prototypes = [
     href: 'https://aurum-ai-dashboard.vercel.app/',
     body: "A stock portfolio dashboard where the AI isn’t a chat bubble in the corner but part of the page. A Siri-style orb glows behind your portfolio value; ask a question, typed or spoken, and it comes forward to answer with charts, while the cards it’s talking about light up behind it.",
     built: 'Built with Claude Code in Next.js, TypeScript and GSAP, using SmoothUI’s Siri Orb and dither charts. Import your own holdings from a Zerodha export, CSV or PDF statement, read entirely in the browser, and every chart, stat and answer recalculates, in rupees against the Nifty 50 for Indian portfolios.',
+  },
+  {
+    title: 'Safal AI',
+    color: 'lavender',
+    to: '/safal-ai',
+    cta: 'Read the case study',
+    body: 'An AI-powered internal platform for a US government contracting firm, putting years of contract data, employee expertise and performance history behind plain-English questions. Ask it to “summarize five contracts where technical assistance is a specific task” and it answers, with the contracts to back it up.',
+    built: 'Designed end to end as the solo product designer: three AI tools (Past Performances, Resume AI and Verify Contracts), a conversational interface that cites its references, and role-based access for admins, editors and viewers.',
   },
 ]
 
@@ -78,9 +86,15 @@ export default function AiProjects() {
                   <h2 className="text-display-3">{p.title}</h2>
                   <p className="mt-5">{p.body}</p>
                   <p className="mt-4 text-small">{p.built}</p>
-                  <Pill href={p.href} target="_blank" rel="noreferrer" field={p.color} className="mt-8">
-                    Open prototype
-                  </Pill>
+                  {p.to ? (
+                    <Pill to={p.to} field={p.color} className="mt-8">
+                      {p.cta}
+                    </Pill>
+                  ) : (
+                    <Pill href={p.href} target="_blank" rel="noreferrer" field={p.color} className="mt-8">
+                      {p.cta ?? 'Open prototype'}
+                    </Pill>
+                  )}
                 </div>
               </li>
             )
