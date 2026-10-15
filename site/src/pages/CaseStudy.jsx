@@ -434,7 +434,11 @@ function Outcome({ section, field, results }) {
             <dl data-reveal-group="0.08" className="mb-12 grid gap-x-6 border-t border-ink sm:grid-cols-2">
               {results.map((r) => (
                 <div key={r.label} className="flex flex-col-reverse border-b border-ink py-6">
-                  <dt className="mt-2 font-mono text-mono-sm uppercase">{r.label}</dt>
+                  <dt className="mt-2 font-mono text-mono-sm uppercase">
+                    {r.label}
+                    {/* Where the number comes from, when it isn't ours to vouch for. */}
+                    {r.source && <span className="mt-1 block">Source — {r.source}</span>}
+                  </dt>
                   <dd className="flex items-baseline gap-3">
                     {/* Before → after, where there is a before worth showing. */}
                     {r.from && <span className="font-mono text-mono-sm">{r.from} →</span>}

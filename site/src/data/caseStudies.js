@@ -686,8 +686,8 @@ export const caseStudies = {
         "label": "All Sites Active"
       },
       {
-        "value": "Solo",
-        "label": "Product Designer"
+        "value": "Led",
+        "label": "A small team of designers"
       }
     ],
     "meta": "RedCrackle · Eightfold Platform · Fortive · Dexcom · Ralliant · 10x Genomics · Booking Holdings",
@@ -831,7 +831,7 @@ export const caseStudies = {
             "text": "All five career pages are live and actively used for hiring across some of the world’s largest industrial technology and life sciences companies. Every page is a faithful translation of its brand — distinct, considered, and production-ready."
           },
           {
-            "text": "Five companies. Five completely different experiences. One designer."
+            "text": "Five companies. Five completely different experiences. One team, one system."
           }
         ]
       }
@@ -1531,7 +1531,7 @@ export const caseStudies = {
         "label": "Product Designer"
       }
     ],
-    "meta": "RedCrackle · Internal Product · Live & Used Across Africa",
+    "meta": "RedCrackle · Internal Product · Live & Used Internationally",
     "sections": [
       {
         "title": "The Brief",
@@ -1643,13 +1643,13 @@ export const caseStudies = {
             "text": "Every component has full content, style, and layout controls. Every interactive element has base and hover states. Every section is responsive."
           },
           {
-            "text": "Design System Foundations:"
+            "text": "Design System Foundations (11):"
           },
           {
             "text": "Grids · Colors · Typography · Drop Shadows · Spacers · Input Fields · Badges · Avatars · Buttons · Background Radius · Icons"
           },
           {
-            "text": "Page Components (25+ complete):"
+            "text": "Page Components (24 complete):"
           },
           {
             "text": "Header Banner · Header Navigation · Welcome · Welcome Slider · Blog · Text · Promotion · Features · Services · Products · Events · Gallery · Videos · Video Gallery · About · Testimonials · Pricing Table · Menu · Clients · Team · FAQs · Contact · Separators · Footer"
@@ -1676,16 +1676,12 @@ export const caseStudies = {
     "glance": {
       "problem": "Wix, Squarespace and Weblium are powerful enough that most small business owners end up hiring a designer to use them — which defeats the point of a no-code builder.",
       "approach": "One editing pattern — Content, Style, Layout — repeated on every component, a Global Theme that sets brand choices once, and curated options in place of infinite ones, across a library of 25+ components.",
-      "result": "30+ businesses building on it, at a 76% component reuse rate."
+      "result": "30+ businesses internationally building on it."
     },
     "results": [
       {
         "value": "30+",
-        "label": "Small businesses and community organisations building on it"
-      },
-      {
-        "value": "76%",
-        "label": "Component reuse across product and site builds"
+        "label": "Businesses building on it, internationally"
       }
     ],
     "tradeoffs": [
@@ -1704,7 +1700,7 @@ export const caseStudies = {
       {
         "chose": "A fixed component library with locked structure",
         "over": "A free-form canvas users can arrange however they like",
-        "why": "Constraint is what keeps a non-designer’s site looking credible, and it is what produced a 76% reuse rate across builds.",
+        "why": "Constraint is what keeps a non-designer’s site looking credible, and it is what keeps every component reusable across every build.",
         "cost": "Any layout outside the library needs engineering rather than editing."
       }
     ]
@@ -1847,7 +1843,8 @@ export const caseStudies = {
     "results": [
       {
         "value": "24%",
-        "label": "DAU/MAU ratio — repeat engagement"
+        "label": "DAU/MAU ratio — repeat engagement",
+        "source": "Per App Store and Google Play Console"
       }
     ],
     "tradeoffs": [
@@ -2022,12 +2019,13 @@ export const caseStudies = {
     "glance": {
       "problem": "A US government contracting firm held years of contract data, past performance and employee expertise that could only be found by digging through documents — or by already knowing who to ask.",
       "approach": "Three natural-language tools over one curated knowledge base, with source references on every answer, a human reviewing every contract decision, role-based access for admins, editors and viewers, and every auth and error state specified.",
-      "result": "48% less time spent searching and validating."
+      "result": "48% less time spent searching and validating, as reported by the client."
     },
     "results": [
       {
         "value": "48%",
-        "label": "Less time spent searching and validating opportunities"
+        "label": "Less time spent searching and validating opportunities",
+        "source": "Client-reported"
       }
     ],
     "tradeoffs": [
@@ -2240,18 +2238,19 @@ export const caseStudies = {
     "glance": {
       "problem": "A Bangkok supplement retailer sold through an infinite scroll with no filters, no trust signals and no accounts. In a category where people are putting things in their bodies, the site read as untrustworthy.",
       "approach": "Rebuilt the platform across 14 page types, web and mobile — trust signals at every decision point, a real filter and discovery system, expert-led recommendations, an AI health advisor gated behind a questionnaire, and a CMS so the team could run it without me.",
-      "result": "Conversion rose from 3% to 21% after launch."
+      "result": "Conversion rose from 3% to 6% after launch."
     },
     "results": [
       {
-        "value": "21%",
+        "value": "6%",
         "from": "3%",
         "label": "Conversion rate after launch"
       },
       {
         "value": "65%",
         "from": "47%",
-        "label": "Health questionnaire completion"
+        "label": "Health questionnaire completion",
+        "source": "Client-reported, via Amplitude"
       }
     ],
     "tradeoffs": [

@@ -18,7 +18,7 @@ export const projects = [
     featured: true,
     tags: ['SaaS', 'Web Application', 'Design System', 'Branding'],
     summary: "Designed a no-code website builder from the ground up — brand identity, UX, component library, and editor interface.",
-    outcome: "Live platform, used by real businesses across Africa.",
+    outcome: "Live platform, used by 30+ businesses internationally.",
   },
   {
     slug: 'earthly-lunar',
