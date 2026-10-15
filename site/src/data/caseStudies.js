@@ -154,8 +154,8 @@ export const caseStudies = {
         "label": "To scan 12 domains and know which need attention"
       },
       {
-        "value": "100%",
-        "label": "Service states specified with engineers before build"
+        "value": "Every",
+        "label": "Service state specified with engineers before build started"
       }
     ],
     "tradeoffs": [
